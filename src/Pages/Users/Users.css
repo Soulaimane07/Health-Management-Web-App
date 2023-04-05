@@ -1,0 +1,91 @@
+.data {
+    width: 40%;
+    margin: 0 20px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 16px;
+    min-height: 100vh;
+    padding: 20px 30px;
+}
+.data .user {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+}
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.row h1 {
+    font-weight: bold;
+}
+.video {
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+
+/* ********* CREATE USER ********* */
+
+.CreateBody {
+    width: 40%;
+    margin: 0 auto;
+    padding: 10px;
+}
+.hr {
+    height: 3px;
+    background-color: var(--green);
+    margin-bottom: 50px;
+}
+.CreateBody .line {
+    display: grid;
+    margin-bottom: 30px;
+}
+.CreateBody .line label {
+    font-size: 18px;
+    font-weight: bold;
+}
+.CreateBody .line input {
+    margin-top: 4px;
+    border-bottom: 2px solid var(--green);
+    outline: none;
+    padding: 6px 10px;
+}
+
+
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+.list .listItem {
+    flex: 1;
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.list .listItem span {
+    margin-left: 20px;
+    color: var(--green);
+    font-size: 24px;
+}
+.list .listItem.active {
+    background-color: var(--green);
+    color: white;
+}
+.line select {
+    border-bottom: 2px solid var(--green);
+    padding: 10px 10px;
+    outline: none;
+}
