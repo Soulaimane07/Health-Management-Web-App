@@ -19,5 +19,8 @@
 .Foodbody {
     margin-top: 40px;
 }
+.CreateBody .line.file{
+    padding: 0;
+}
 
 

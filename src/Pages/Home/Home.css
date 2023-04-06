@@ -1,12 +1,23 @@
-.Home{
-    
-}
-.boxes{
+.Home .boxes{
     display: flex;
 }
-.boxe{
+.Home .boxe{
     flex:1;
-    border-radius: 16px;
-    height: 100px;
+    border-radius: 8px;
+    min-height: 100px;
     margin: 0 10px;
+    background-color: #0bf186b1;
+    padding: 20px 40px;
+    display: flex;
+    color: white;
+    align-items: center;
+}
+.Home .boxImage {
+    width: 30%;
+    margin-right: 20px;
+    align-items: center;
+}
+.Home .boxe h1 {
+    font-size: 24px;
+    font-weight: bold;
 }

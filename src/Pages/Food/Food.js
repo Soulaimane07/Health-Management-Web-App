@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../../Components/Header/Header'
 import './Food.css'
 import Table from '../../Components/Table/Table'
+import { GetData } from '../../Components/Functions/CRUD'
 
 function Food() {
     const [option, setOption] = useState("Fruits")
@@ -33,6 +34,10 @@ function Food() {
         },
     ]
 
+
+        let food = GetData("/food")
+        console.log(food);
+
   return (
     <div className='Food PageBox'>
         <Header title="Food" button="Create Food" />
@@ -45,6 +50,8 @@ function Food() {
                     </button>
                 ))}
             </div>
+
+            <img src={`https://health-manager.onrender.com${food[0]?.image}`} />
 
             <div className='Foodbody'>
                 <Table data={[]} />

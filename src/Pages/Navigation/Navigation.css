@@ -5,15 +5,13 @@
     height: 100%;
     padding: 10px 0;
     top: 0;
-    display: grid;
-    justify-content: space-between;
-    align-items: normal;
+    left: 0;
 }
 .logo {
     width: 60%;
     margin: 0 auto;
 }
-.logo img {
+img {
     width: 100%;
     height: 100%;
 }
@@ -52,8 +50,21 @@
 
 
 
-.profile {
-    background-color: #47ba92;
-    align-content:baseline;
-    height: 80px;
+.profileLink {
+    position: absolute;
+    background-color: var(--green);
+    height: 60px;
+    width: 100%;
+    bottom: 20px;
+    left: 20px;
+    width: 80%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+}
+.profileLink .profileImg {
+    width: 30%;
+    margin-right: 10px;
 }

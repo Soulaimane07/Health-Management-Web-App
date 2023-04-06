@@ -1,0 +1,41 @@
+.login {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+}
+.loginPage {
+    flex: 0.3;
+    padding: 20px 60px;
+}
+.loginPage .logo {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.loginPage h1{
+    text-align: center;
+    font-size: 30px;
+    margin: 20px;
+    margin-bottom: 30px;
+
+}
+.loginPage .emailpass {
+    display: grid;
+    margin-bottom: 20px;
+}
+.emailpass input {
+    margin-top: 4px;
+    border: 2px solid var(--green);
+    border-radius: 8px;
+    outline: none;
+    padding: 10px 20px;
+}
+.loginPage .signup{
+    display: flex;
+    margin-top: 20px;
+
+}
+.loginPage .signuplink{
+    margin-left: 6px;
+    color: var(--green);
+}

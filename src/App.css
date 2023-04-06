@@ -24,8 +24,7 @@
     --black: #181D31;
     --green: #15E884;
 }
-/* #181D31 */
-/* #15E884 */
+
 
 
 .alert {
@@ -33,6 +32,8 @@
     padding: 10px 0;
     font-size: 14px;
     display: flex;
+    align-items: center;
+    text-align: center;
     align-items: center;
 }
 .alert span {
@@ -56,4 +57,47 @@ table {
 }
 table tbody th {
     color: #181D31;
+}
+
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #2a2c2b44;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal .modalBody {
+    background-color: white;
+    width: 30%;
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+}
+.modal .modalBody h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #15e88646;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--green);
+    border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #03bc66;
 }

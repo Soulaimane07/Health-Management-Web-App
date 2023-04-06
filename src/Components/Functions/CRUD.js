@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const Link = "https://health-manager.onrender.com"
+export const ServerLink = "https://health-manager.onrender.com"
 
 export const GetData = (prop) => {
     const [users, setUsers] = useState([])
     
     useEffect(()=>{
-        axios.get(`${Link}${prop}`)
+        axios.get(`${ServerLink}${prop}`)
         .then(res => {
             setUsers(res.data)
         })
@@ -17,11 +17,11 @@ export const GetData = (prop) => {
 }
 
 export const Delete = (id) => {
-  axios.delete(`${Link}/users/${id}`)
+  axios.delete(`${ServerLink}/users/${id}`)
       .then(res => {
         console.log("User is Deleted!!");
 
-        axios.delete(`${Link}/userDetails/${id}`)
+        axios.delete(`${ServerLink}/userDetails/${id}`)
         .then(res =>{
           console.log("User Details is Deleted!!");
         })
@@ -29,7 +29,7 @@ export const Delete = (id) => {
 }
 
 export const Post = (path, data, fun) => {
-  axios.post(`${Link}${path}`, data)
+  axios.post(`${ServerLink}${path}`, data, {headers: {'Content-Type':'multipart/form-data' }})
     .then(res=> {
       fun && (fun(res.data.user._id))
       console.log(res.data)

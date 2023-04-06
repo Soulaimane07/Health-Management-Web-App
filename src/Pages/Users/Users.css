@@ -7,6 +7,10 @@
     min-height: 100vh;
     padding: 20px 30px;
 }
+.data .profileImg {
+    width: 50%;
+    margin: 0 auto;
+}
 .data .user {
     font-size: 30px;
     font-weight: bold;
@@ -51,9 +55,10 @@
 }
 .CreateBody .line input {
     margin-top: 4px;
-    border-bottom: 2px solid var(--green);
+    border: 2px solid var(--green);
+    border-radius: 8px;
     outline: none;
-    padding: 6px 10px;
+    padding: 10px 20px;
 }
 
 

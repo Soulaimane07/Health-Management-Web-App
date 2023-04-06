@@ -24,3 +24,20 @@
 .disabledBtn {
     opacity: 50%;
 }
+.spiner {
+    width: 100%;
+    justify-content: center;
+}
+
+
+
+.generalBtn {
+    width: 100%;
+    transition: all 300ms;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+.generalBtn:hover {
+    opacity: 60%;
+}

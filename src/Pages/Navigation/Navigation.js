@@ -5,7 +5,7 @@ import { RxDashboard } from 'react-icons/rx';
 import { AiOutlineHome} from 'react-icons/ai';
 import { FiUsers } from 'react-icons/fi';
 
-function Navigation() {
+function Navigation(props) {
   const list= [
     {
       "title":"Dashboard",
@@ -31,7 +31,7 @@ function Navigation() {
       "title":"Users",
       "logo": <FiUsers />,
       "link":"/users",
-    }
+    }    
   ]
 
   return (
@@ -39,7 +39,7 @@ function Navigation() {
       <div>
         <div className='logo'>
           <Link to="/">
-            <img src='..\Assets\Images\logo.jpg' />
+            <img src='..\Assets\Images\logo.jpg' alt='HM-Logo' />
           </Link>
         </div>
         <div className='pagesList'>
@@ -50,9 +50,17 @@ function Navigation() {
               </div>
               <p>{item.title}</p>
             </NavLink>
+
           ))}
         </div>
       </div>
+
+      <NavLink to="/account" activateclassname='active' className='profileLink'>
+          <div className='profileImg'>
+              <img src='../assets/images/profiles/4.png' alt='Profile' />
+          </div>
+          <h1> {props.user?.fname} </h1>
+      </NavLink>
     </div>
   )
 }

@@ -1,9 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import Button from '../../../Components/Buttons/Button';
+import { useNavigate, useParams } from 'react-router-dom'
+import { GeneralBtn } from '../../../Components/Buttons/Buttons';
+import '../../../Components/Buttons/Button.css'
+import Modal from '../../../Components/Modals/Modal';
+import { Delete } from '../../../Components/Functions/CRUD';
 
 function UserDetails() {
+    const [modal, setModal] = useState(false)
+
     const params = useParams()
     const id = params._id
 
@@ -24,82 +29,114 @@ function UserDetails() {
     
     const data = [
         {
-            "title":"User's First name",
+            "title":"First name",
             "value": user?.fname,
         },
         {
-            "title":"User's Last name",
+            "title":"Last name",
             "value": user?.lname,
         },
         {
-            "title":"User's Email",
+            "title":"Email",
             "value": user?.email,
         },
         {
-            "title":"User's password",
+            "title":"password",
             "value": user?.pass,
         },
     ]
 
-
     const detaildata = [
         {
-            "title":"User's Goal",
-            "value": userDetails?.goal,
-        },
-        {
-            "title":"User's Current Weight",
-            "value": userDetails?.CWeight,
-        },
-        {
-            "title":"User's Goal Weight",
-            "value": userDetails?.GWeight,
-        },
-        {
-            "title":"User's age",
+            "title":"Age",
             "value": userDetails?.age,
         },
         {
-            "title":"User's sex",
+            "title":"Gendre",
             "value": userDetails?.sex,
         },
         {
-            "title":"User's calories",
+            "title":"Goal",
+            "value": userDetails?.goal,
+        },
+        {
+            "title":"activity",
+            "value": userDetails?.activity,
+        },
+        {
+            "title":"Current Weight",
+            "value": userDetails?.CWeight,
+        },
+        {
+            "title":"Goal Weight",
+            "value": userDetails?.GWeight,
+        },
+        {
+            "title":"calories",
             "value": userDetails?.calories,
         },
         {
-            "title":"User's Steps",
+            "title":"Steps",
             "value": userDetails?.steps,
         },
         {
-            "title":"User's water",
+            "title":"water",
             "value": userDetails?.water,
-        },
-        {
-            "title":"User's activity",
-            "value": userDetails?.activity,
         },
     ]
 
+    const Logout = () => {
+        setModal(true)
+    }
+
+    const Cancel = () => {
+        setModal(false)
+    }
+
+    const navigate = useNavigate()
+    
+    const Confirm = () => {
+        Delete(id)
+        navigate('/users')
+
+    }
+
   return (
     <div className='data'>
-        <h1 className='user'> {user.fname} {user.lname} </h1>
-        {data.map((item,key)=>(
-            <div key={key} className='row'>
-                <h1> {item.title} </h1>
-                <h2> {item.value}  </h2>
-            </div>
-        ))}
+        <div className='profileImg'>
+            <img src='../assets/images/profiles/4.png' alt='Profile' />
+        </div>
 
-        {detaildata.map((item,key)=>(
-            <div key={key} className='row'>
-                <h1> {item.title} </h1>
-                <h2> {item.value}  </h2>
-            </div>
-        ))} 
+        <h1 className='user'> {user.fname} {user.lname} </h1>
         
-        <Button title="Update"/>
-        <Button title="Delete" color="#E21818" userid={user._id} />
+        <div style={{marginBottom: 40, marginLeft: 30, marginRight: 30}}>
+            {data.map((item,key)=>(
+                <div key={key} className='row'>
+                    <h1> {item.title} </h1>
+                    <h2> {item.value}  </h2>
+                </div>
+            ))}
+        </div>
+
+        <div style={{marginBottom: 40, marginLeft: 30, marginRight: 30}}>
+            {detaildata.map((item,key)=>(
+                <div key={key} className='row'>
+                    <h1> {item.title} </h1>
+                    <h2> {item.value}  </h2>
+                </div>
+            ))} 
+        </div>
+        
+        <div className='buttons' style={{marginBottom: 20}}>
+            <div className='btn'>
+                {GeneralBtn("Update", null, "#15E884", "white")}
+            </div>
+            <div className='btn'>
+                {GeneralBtn("Delete", Logout, "rgb(246, 22, 22)", "white")}
+            </div>
+        </div>
+
+        {modal && <Modal logout={Logout} Confirm={Confirm} Cancel={Cancel} />}
     </div>
 
   )

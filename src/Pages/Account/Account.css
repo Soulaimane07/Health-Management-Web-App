@@ -1,0 +1,28 @@
+.account .PageBody {
+    width: 40%;
+    margin: 0 auto;
+}
+.account .line {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    margin: 20px 30px;
+}
+.account .line h1 {
+    font-weight: bold;
+    font-size: 18px;
+}
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.buttons .btn {
+    width: 48%;
+}
+.account .profileImg {
+    width: 40%;
+    margin: 0 auto;
+}
