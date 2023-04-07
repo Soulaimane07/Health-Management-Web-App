@@ -9,7 +9,7 @@ function Home() {
     {
       "title":"Food",
       "icon":"../assets/images/home/food.png",
-      "number": 100,
+      "number": GetData("/food").length,
       "link":"/food"
     },
     {

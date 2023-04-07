@@ -10,7 +10,7 @@ import CreateUser from './Pages/Users/Pages/CreateUser';
 import Login from './Pages/Auth/Login/Login'
 import { useEffect, useState } from 'react';
 import Account from './Pages/Account/Account';
-import Createfood from './Pages/Food/Pages/Create/Createfood';
+import Createfood from './Pages/Food/Pages/Createfood';
 import Workout from './Pages/Workout/Workout';
 
 function App() {

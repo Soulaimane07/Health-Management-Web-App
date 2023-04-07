@@ -16,11 +16,74 @@
 }
 
 
-.Foodbody {
-    margin-top: 40px;
-}
 .CreateBody .line.file{
     padding: 0;
 }
 
 
+.foodBody {
+    margin-top: 40px;
+    display: inline-flexbox;
+    text-align: center;
+}
+.foodBody .foodItem {
+    width: 14%;
+    display: inline-block;
+    text-align: center;
+    background-color: #15e886d1;
+    margin: 20px 10px;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+.foodBody .foodItem:hover {
+    opacity: 60%;
+}
+.foodItem .foodImage {
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.foodItem h1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+.foodItem .foodItemBody {
+    text-align: left;
+    margin: 0 20px;
+    margin-top: 10px;
+}
+
+
+
+.Food .modal .close {
+    position: absolute;
+    top: 15%;
+    right: 22%;
+    font-size: 40px;
+    color: white;
+}
+.Food .foodModal {
+   background-color: white;
+   min-height: 60vh;
+   min-width: 50%;
+   border-radius: 8px;
+   padding: 20px 40px;
+}
+.Food .foodModal .modalImage {
+    width: 40%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.Food .foodModal .foodModalBody {
+    width: 90%;
+    margin: 0 auto;
+}
+.Food .foodModal .foodModalRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
