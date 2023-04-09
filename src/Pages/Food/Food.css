@@ -16,8 +16,20 @@
 }
 
 
-.CreateBody .line.file{
-    padding: 0;
+.CreateFoodBody.CreateBody {
+    width: 100%;
+    display: flex;
+    align-items: normal;
+    justify-content: space-between;
+}
+.CreateBody .black {
+    background-color: var(--green);
+    width: 4px;
+    border-radius: 8px;
+}
+.CreateBody .Content {
+    width: 100%;
+    padding: 20px 40px;
 }
 
 

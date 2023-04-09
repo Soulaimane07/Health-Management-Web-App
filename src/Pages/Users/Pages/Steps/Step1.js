@@ -43,7 +43,7 @@ function Step1(props) {
                 {pass?.length < 8 && AlertDanger("Password must be more than 8 digits")}
             </div>
         </form>
-        {CreateBtn("Next", "/users", user, condittion, create, props.setUserId)}
+        {CreateBtn("Next", condittion, create)}
     </>
   )
 }

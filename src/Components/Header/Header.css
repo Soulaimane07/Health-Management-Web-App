@@ -15,10 +15,13 @@
     transition: all 300ms;
     display: flex;
     align-items: center;
+    border: 2px solid transparent;
 }
 
 .header .HeaderBtn:hover {
-    opacity: 60%;
+    background: none;
+    border-color: var(--green);
+    color: var(--green);
 }
 .header .HeaderBtn p {
     margin-left: 10px;

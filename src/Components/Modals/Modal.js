@@ -8,10 +8,10 @@ function Modal(props) {
             <h1> Are you sure! </h1>
             <div className='buttons'>
                 <div className='btn'>
-                    {GeneralBtn("Yes", props.Confirm, "rgb(246, 22, 22)", "white")}
+                    {GeneralBtn("Yes", props.Confirm, "delete")}
                 </div>
                 <div className='btn'>
-                    {GeneralBtn("No", props.Cancel, "#15E884", "white")}
+                    {GeneralBtn("No", props.Cancel, "update")}
                 </div>
             </div>
         </div>

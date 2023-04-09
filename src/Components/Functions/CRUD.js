@@ -19,19 +19,27 @@ export const GetData = (prop) => {
 export const Delete = (id) => {
   axios.delete(`${ServerLink}/users/${id}`)
       .then(res => {
-        console.log("User is Deleted!!");
+        console.log("==> Succeded: ", res);
 
         axios.delete(`${ServerLink}/userDetails/${id}`)
         .then(res =>{
-          console.log("User Details is Deleted!!");
+          console.log("==> Succeded: ", res);
         })
+        .catch(error => {
+          console.log("## Error: ", error);
+        })
+      })
+      .catch(error => {
+        console.log("## Error: ", error);
       })
 }
 
-export const Post = (path, data, fun) => {
+export const Post = (path, data) => {
   axios.post(`${ServerLink}${path}`, data, {headers: {'Content-Type':'multipart/form-data' }})
     .then(res=> {
-      fun && (fun(res.data.user._id))
-      console.log(res.data)
+      console.log("==> Succeded: ",res.data)
+    })
+    .catch(error => {
+      console.log("## Error: ", error);
     })
 }

@@ -129,10 +129,10 @@ function UserDetails() {
         
         <div className='buttons' style={{marginBottom: 20}}>
             <div className='btn'>
-                {GeneralBtn("Update", null, "#15E884", "white")}
+                {GeneralBtn("Update", null, "update")}
             </div>
             <div className='btn'>
-                {GeneralBtn("Delete", Logout, "rgb(246, 22, 22)", "white")}
+                {GeneralBtn("Delete", Logout, "delete")}
             </div>
         </div>
 

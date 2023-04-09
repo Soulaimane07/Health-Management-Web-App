@@ -61,10 +61,10 @@ function Account(props) {
 
             <div className='buttons'>
                 <div className='btn'>
-                    {GeneralBtn("Update", null, "#15E884", "white")}
+                    {GeneralBtn("Update", null, "update")}
                 </div>
                 <div className='btn'>
-                    {GeneralBtn("Log out", LogoutClick, "rgb(246, 22, 22)", "white")}
+                    {GeneralBtn("Log out", LogoutClick, "delete")}
                 </div>
             </div>
         </div>

@@ -17,12 +17,18 @@
     font-weight: bold;
     opacity: 100%;
     transition: all 300ms;
-}
-.CreateBtn:hover {
-    opacity: 60%;
-}
-.disabledBtn {
+    border: 2px solid transparent;
     opacity: 50%;
+}
+.CreateBtn.activeBtn:hover {
+    opacity: 100%;
+    background: none;
+    border-color: var(--green);
+    color: var(--green);
+}
+.activeBtn {
+    opacity: 100%;
+    background-color: var(--green);
 }
 .spiner {
     width: 100%;
@@ -40,4 +46,29 @@
 }
 .generalBtn:hover {
     opacity: 60%;
+}
+
+
+.generalBtn.updateBtn {
+    color: white;
+    background-color: var(--green);
+    opacity: 100%;
+    border: 2px solid transparent;
+}
+.generalBtn.updateBtn:hover {
+    background: none;
+    border-color: var(--green);
+    color: var(--green);
+}
+
+.generalBtn.deleteBtn {
+    color: white;
+    background-color: var(--danger);
+    opacity: 100%;
+    border: 2px solid transparent;
+}
+.generalBtn.deleteBtn:hover {
+    background: none;
+    border-color: var(--danger);
+    color: var(--danger);
 }

@@ -30,42 +30,57 @@ function Createfood() {
         navigate('/food')
     }
 
+    console.log(condittion);
+
   return (
     <div className='Create PageBox'>
         <Header title="Create Food"  />
         <hr className='hr'></hr> 
         
-        <div className='CreateBody'>
-            <div className='line file'>
-                <label>Image</label>
-                <input type='file' name='imgae' onChange={e=> setimage(e.target.files[0])} />
+        <div className='CreateBody CreateFoodBody'>
+            <div className='Content'>
+                <div>
+                    <div className='line file'>
+                        <label>Image</label>
+                        <input type='file' name='imgae' onChange={e=> setimage(e.target.files[0])} />
+                    </div>
+                    <div className='line'>
+                        <label>Name</label>
+                        <input type='text' name='name' onChange={e=> setname(e.target.value)} />
+                    </div>
+                    <div className='line'>
+                        <label>Type</label>
+                        <input type='text' name='calories' onChange={e=> setcalories(e.target.value)} />
+                    </div>
+                </div>
+                {CreateBtn("Ajouter", condittion, fun)}
             </div>
-            <div className='line'>
-                <label>Name</label>
-                <input type='text' name='name' onChange={e=> setname(e.target.value)} />
+            
+            <div className='black'></div>
+            
+            <div className='Content'>
+                <div className='line'>
+                    <label>Calories</label>
+                    <input type='number' name='calories' onChange={e=> setcalories(e.target.value)} />
+                </div>
+                <div className='line'>
+                    <label>Carbs</label>
+                    <input type='number' name='carbs' onChange={e=> setcarbs(e.target.value)} />
+                </div>
+                <div className='line'>
+                    <label>Fat</label>
+                    <input type='number' name='fat' onChange={e=> setfat(e.target.value)}/>
+                </div>
+                <div className='line'>
+                    <label>Proteine</label>
+                    <input type='number' name='proteine' onChange={e=> setproteine(e.target.value)}/>
+                </div>
+                <div className='line'>
+                    <label>Fibre</label>
+                    <input type='number' name='fibre' onChange={e=> setfibre(e.target.value)} />
+                </div>
             </div>
-            <div className='line'>
-                <label>Calories</label>
-                <input type='text' name='calories' onChange={e=> setcalories(e.target.value)} />
-            </div>
-            <div className='line'>
-                <label>Carbs</label>
-                <input type='text' name='carbs' onChange={e=> setcarbs(e.target.value)} />
-            </div>
-            <div className='line'>
-                <label>Fat</label>
-                <input type='text' name='fat' onChange={e=> setfat(e.target.value)}/>
-            </div>
-            <div className='line'>
-                <label>Proteine</label>
-                <input type='text' name='proteine' onChange={e=> setproteine(e.target.value)}/>
-            </div>
-            <div className='line'>
-                <label>Fibre</label>
-                <input type='text' name='fibre' onChange={e=> setfibre(e.target.value)} />
-            </div>
-            {CreateBtn("Ajouter", "/food", Food, condittion, fun)}
-        </div>  
+        </div>
     </div>
   )
 }
