@@ -8,6 +8,8 @@ import { AlertDanger } from '../../../Components/Alerts/Alerts'
 import { useNavigate } from "react-router-dom";
 
 function Login() {
+    document.title = "Health Manager - Login"
+
     const navigate = useNavigate()
 
     const [email, setEmail] = useState(null)

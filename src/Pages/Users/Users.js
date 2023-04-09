@@ -4,6 +4,9 @@ import Table from '../../Components/Table/Table'
 import { GetData } from '../../Components/Functions/CRUD'
 
 function Users() {
+    document.title = "Health Manager - Users"
+
+
     let users = GetData("/users")
     console.log("==> ", users);
 

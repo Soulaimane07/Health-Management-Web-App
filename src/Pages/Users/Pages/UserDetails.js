@@ -7,10 +7,13 @@ import Modal from '../../../Components/Modals/Modal';
 import { Delete } from '../../../Components/Functions/CRUD';
 
 function UserDetails() {
+    
     const [modal, setModal] = useState(false)
-
+    
     const params = useParams()
     const id = params._id
+
+    document.title = `Health Manager - User ${id}`
 
     const [user, setUser] = useState({})
     const [userDetails, setUserDetails] = useState({})

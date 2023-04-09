@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 import { GetData } from '../../Components/Functions/CRUD'
 
 function Home() {
+  document.title = "Health Manager - Dashboard"
+
   const Boxes=[
     {
       "title":"Food",

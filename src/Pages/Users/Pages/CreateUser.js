@@ -5,6 +5,9 @@ import Step1 from './Steps/Step1';
 import Step2 from './Steps/Step2';
 
 function CreateUser() {
+    document.title = "Health Manager - Create User"
+
+
     const [part, setPart] = useState(0)
     const [userId, setUserId] = useState(null)
 

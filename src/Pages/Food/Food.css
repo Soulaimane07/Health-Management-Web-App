@@ -16,18 +16,18 @@
 }
 
 
-.CreateFoodBody.CreateBody {
+.CreateFoodBody.CreateBody, .modal .foodModalBody {
     width: 100%;
     display: flex;
     align-items: normal;
     justify-content: space-between;
 }
-.CreateBody .black {
+.CreateBody .black, .modal .black {
     background-color: var(--green);
     width: 4px;
     border-radius: 8px;
 }
-.CreateBody .Content {
+.CreateBody .Content, .modal .Content {
     width: 100%;
     padding: 20px 40px;
 }
@@ -48,9 +48,13 @@
     border-radius: 8px;
     color: white;
     cursor: pointer;
+    transition: all 300ms;
+    border: 2px solid transparent;
 }
 .foodBody .foodItem:hover {
-    opacity: 60%;
+    border-color: var(--green);
+    background: none;
+    color: var(--green);
 }
 .foodItem .foodImage {
     width: 60%;
@@ -74,25 +78,21 @@
 .Food .modal .close {
     position: absolute;
     top: 15%;
-    right: 22%;
+    right: 18%;
     font-size: 40px;
     color: white;
 }
 .Food .foodModal {
    background-color: white;
    min-height: 60vh;
-   min-width: 50%;
+   min-width: 40%;
    border-radius: 8px;
-   padding: 20px 40px;
+   padding: 20px 30px;
 }
 .Food .foodModal .modalImage {
     width: 40%;
     margin: 0 auto;
     margin-bottom: 20px;
-}
-.Food .foodModal .foodModalBody {
-    width: 90%;
-    margin: 0 auto;
 }
 .Food .foodModal .foodModalRow {
     display: flex;

@@ -4,6 +4,8 @@ import { CreateBtn } from '../../../Components/Buttons/Buttons'
 import { useNavigate } from 'react-router-dom'
 
 function Createfood() {
+    document.title = "Health Manager - Create Food"
+
     const [name, setname] = useState(null)
     const [calories, setcalories] = useState(null)
     const [carbs, setcarbs] = useState(null)

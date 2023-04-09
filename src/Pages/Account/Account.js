@@ -7,6 +7,8 @@ import Modal from '../../Components/Modals/Modal';
 
 
 function Account(props) {
+    document.title = "Health Manager - Account"
+
     const [modal, setModal] = useState(false)
 
     console.log(props.user);
@@ -70,19 +72,6 @@ function Account(props) {
         </div>
 
         {modal &&
-            // <div className='modal'>
-            //     <div className='modalBody'>
-            //         <h1> Are you sure! </h1>
-            //         <div className='buttons'>
-            //             <div className='btn'>
-            //                 {GeneralBtn("Yes", LogOut, "rgb(246, 22, 22)", "white")}
-            //             </div>
-            //             <div className='btn'>
-            //                 {GeneralBtn("No", cancelClick, "#15E884", "white")}
-            //             </div>
-            //         </div>
-            //     </div>
-            // </div>
             <Modal Cancel={cancelClick} Confirm={LogOut} />
         }
     </div>
