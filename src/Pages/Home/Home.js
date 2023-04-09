@@ -4,31 +4,32 @@ import Header from '../../Components/Header/Header'
 import { Link } from 'react-router-dom'
 import { GetData } from '../../Components/Functions/CRUD'
 
-function Home() {
-  document.title = "Health Manager - Dashboard"
+function Home(props) {
+  const lang = props.lang
+  document.title = `Health Manager - ${lang.dashboard}`
 
   const Boxes=[
     {
-      "title":"Food",
+      "title": lang.food,
       "icon":"../assets/images/home/food.png",
       "number": GetData("/food").length,
       "link":"/food"
     },
     {
-      "title":"Workouts",
+      "title":lang.workouts,
       "icon":"../assets/images/home/workout.png",
       "number": 14,
       "link":"/workout"
     },
     {
-      "title":"Diets",
+      "title": lang.diets,
       "icon":"../assets/images/home/diet.png",
       "number": 10,
       "numberLabel": "Diet",
       "link":"/diets"
     },
     {
-      "title":"Users",
+      "title": lang.users,
       "icon":"../assets/images/home/users.png",
       "number": GetData("/users").length,
       "numberLabel": "User",
@@ -38,7 +39,7 @@ function Home() {
 
   return (
     <div className='Home PageBox'>
-      <Header title="Dashboard" />
+      <Header title={lang.dashboard} />
       
       <div className='boxes'>
        {Boxes?.map((item,key)=>(

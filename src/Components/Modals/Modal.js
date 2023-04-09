@@ -1,4 +1,5 @@
 import React from 'react'
+import './Modal.css'
 import { GeneralBtn } from '../Buttons/Buttons'
 
 function Modal(props) {

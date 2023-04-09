@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { CreateBtn } from '../../../../Components/Buttons/Buttons'
+import { ConditionBtn } from '../../../../Components/Buttons/Buttons'
 
 function Step2(props) {
     const goals = [
@@ -119,7 +119,7 @@ function Step2(props) {
                 </select>
             </div>
         </form>
-        {CreateBtn("Finish", "/usersDetails", userDetails, condittion2, navigateFun)}   
+        {ConditionBtn("Finish", "/usersDetails", userDetails, condittion2, navigateFun)}   
     </>
   )
 }

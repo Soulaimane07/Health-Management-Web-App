@@ -1,0 +1,23 @@
+.tableHeader {
+    background-color: var(--green);
+    color: white;
+}
+.tableLine {
+    transition: all 300ms;
+}
+.tableLine:hover {
+    background-color: #15e88646;
+}
+table {
+    border-radius: 8px;
+    overflow: hidden;
+}
+table tbody th {
+    color: #181D31;
+}
+
+table .video {
+    width: 40%;
+    margin: 0 auto;
+    /* background: none; */
+}

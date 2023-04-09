@@ -1,0 +1,182 @@
+{
+    "English":{
+        "title":"English",
+        "sub":"en",
+        "pages":{
+            "navbar":{
+                "dashboard":"Dashboard",
+                "food":"Food",
+                "workouts":"Workouts",
+                "diets":"Diets",
+                "users":"Users"
+            },
+            "food":{
+                "title":"Food",
+                "options":{
+                    "all":"All",
+                    "fruits":"Fruits",
+                    "vegetables":"Vegetables",
+                    "meat":"Meat",
+                    "bakery":"Bakery",
+                    "dairy":"Dairy products",
+                    "snacks":"Snacks",
+                    "drinks":"Drinks",
+                    "dishes":"Dishes"
+                },
+                "modal":{
+                    "id":"ID",
+                    "name":"Name",
+                    "type":"Type",
+                    "calories":"Calories",
+                    "carbs":"Carbs",
+                    "fat":"Fat",
+                    "fiber":"Fiber",
+                    "protein":"Protein"
+                },
+                "create":{
+                    "title":"Create Food",
+                    "image1":"Click to upload",
+                    "image2":"Food Image"
+                }
+            },
+            "users":{
+                "title":"Users",
+                "create":{
+                    "title":"Create User",
+                    "step1":"Step 1",
+                    "step2":"Step 2",
+                    "email":"Email",
+                    "fname":"First name",
+                    "lname":"Last name",
+                    "pass":"Password",
+                    "next":"Next"
+                }
+            },
+            "buttons":{
+                "create":"Create",
+                "delete":"Delete",
+                "update":"Update"
+            }
+        }
+    },
+    "French":{
+        "title":"Français",
+        "sub":"fr",
+        "pages":{
+            "navbar":{
+                "dashboard":"Tableau de bord",
+                "food":"Nourriture",
+                "workouts":"Entraînement",
+                "diets":"Régimes",
+                "users":"Utilisateurs"
+            },
+            "food":{
+                "title":"Nourriture",
+                "options":{
+                    "all":"Tout",
+                    "fruits":"Fruits",
+                    "vegetables":"Légumes",
+                    "meat":"Viande",
+                    "bakery":"Boulangerie",
+                    "dairy":"Produits laitiers",
+                    "snacks":"Collations",
+                    "drinks":"Boissons",
+                    "dishes":"Plats"
+                },
+                "modal":{
+                    "id":"ID",
+                    "name":"Nom",
+                    "type":"Type",
+                    "calories":"Calories",
+                    "carbs":"Crabes",
+                    "fat":"Gras",
+                    "fiber":"Fibre",
+                    "protein":"Protéine"
+                },
+                "create":{
+                    "title":"Créer de la nourriture",
+                    "image1":"Cliquez pour télécharger",
+                    "image2":"Nourriture Image"
+                }
+            },
+            "users":{
+                "title":"Utilisateurs",
+                "create":{
+                    "title":"Créer un utilisateur",
+                    "step1":"Étape 1",
+                    "step2":"Étape 2",
+                    "email":"E-mail",
+                    "fname":"Prenom",
+                    "lname":"Nom",
+                    "pass":"Mot de passe",
+                    "next":"suivant"
+                }
+            },
+            "buttons":{
+                "create":"Créer",
+                "delete":"Supprimer",
+                "update":"Mise à jour"
+            }
+        }
+    },
+    "Arabic":{
+        "title":"العربية",
+        "sub":"ar",
+        "pages":{
+            "navbar":{
+                "dashboard":"لوحة القيادة",
+                "food":"الطعام",
+                "workouts":"التدريبات",
+                "diets":"الحميات",
+                "users":"المستخدمين"
+            },
+            "food":{
+                "title":"الطعام",
+                "options":{
+                    "all":"الجميع",
+                    "fruits":"فواكه",
+                    "vegetables":"خضروات",
+                    "meat":"لحوم",
+                    "bakery":"مخبوزات",
+                    "dairy":"ألبان",
+                    "snacks":"وجبات خفيفة",
+                    "drinks":"مشروبات",
+                    "dishes":"أطباق"
+                },
+                "modal":{
+                    "id":"ID",
+                    "name":"الإ سم",
+                    "type":"النوع",
+                    "calories":"السعرات الحرارية",
+                    "carbs":"الكربوهيدرات",
+                    "fat":"الدهون",
+                    "fiber":"الألياف",
+                    "protein":"البروتين"
+                },
+                "create":{
+                    "title":"إنشاء طعام",
+                    "image1":"انقر للتحميل",
+                    "image2":"صورة الغذاء"
+                }
+            },
+            "users":{
+                "title":"المستخدمين",
+                "create":{
+                    "title":"إنشاء مستخدم",
+                    "step1":"الخطوة 1",
+                    "step2":"الخطوة 2",
+                    "email":"البريد الإلكتروني",
+                    "fname":"الاسم الأول",
+                    "lname":"الاسم الأخير",
+                    "pass":"كلمة السر",
+                    "next":"التالي"
+                }
+            },
+            "buttons":{
+                "create":"إنشاء",
+                "delete":"حذف",
+                "update":"تحديث"
+            }
+        }
+    }
+}

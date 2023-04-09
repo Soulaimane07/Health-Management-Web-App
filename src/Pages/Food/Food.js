@@ -5,37 +5,13 @@ import { GetData } from '../../Components/Functions/CRUD'
 import {MdClose} from 'react-icons/md'
 import { GeneralBtn } from '../../Components/Buttons/Buttons'
 
-function Food() {
-    document.title = "Health Manager - Food"
+function Food(props) {
+    const lang = props.lang
+    document.title = `Health Managaer - ${lang.title}`
 
-    const [option, setOption] = useState("Fruits")
+    const [option, setOption] = useState("all")
 
-    const options = [
-        {
-            'title':'Fruits',
-        },
-        {
-            'title':'Légumes',
-        },
-        {
-            'title':'Viandes',
-        },
-        {
-            'title':'Boulangerie',
-        },
-        {
-            'title':'Produit laitier',
-        },
-        {
-            'title':'Snacks',
-        },
-        {
-            'title':'Boissons',
-        },
-        {
-            'title':'Plats',
-        },
-    ]
+    const options = props.options
 
     let food = GetData("/food")
     console.log(food);
@@ -43,41 +19,40 @@ function Food() {
     const [modal, setModal] = useState(false)
     const [modalBody, setModalBody] = useState({})
 
-    console.log(modalBody);
     const foodModalBody = [
         {
-            "title":"Id",
+            "title": lang.modal.id,
             "value": modalBody?._id
         },
         {
-            "title":"Name",
+            "title": lang.modal.name,
             "value": modalBody?.name
         },
         {
-            "title":"Type",
+            "title": lang.modal.type,
             "value": modalBody?.type
         },
     ]
 
     const foodModalBody2 = [
         {
-            "title":"Calories",
+            "title": lang.modal.calories,
             "value": modalBody?.calories,
         },
         {
-            "title":"Carbs",
+            "title": lang.modal.carbs,
             "value": modalBody?.carbs,
         },
         {
-            "title":"Fat",
+            "title": lang.modal.fat,
             "value": modalBody?.fat,
         },
         {
-            "title":"Fiber",
+            "title": lang.modal.fiber,
             "value": modalBody?.fiber,
         },
         {
-            "title":"Protein",
+            "title": lang.modal.protein,
             "value": modalBody?.protein,
         },
     ]
@@ -263,12 +238,12 @@ function Food() {
 
   return (
     <div className='Food PageBox'>
-        <Header title="Food" number={food?.length} button="Create Food" />
+        <Header title={lang.title} number={food?.length} button={lang.create.title} />
 
         <div className='PageBody'>
             <div className='options'>
                 {options.map((item,key)=>(
-                    <button key={key} className={`optionBtn ${item.title === option && "btnactive"}`} onClick={()=> setOption(item.title)}> 
+                    <button key={key} className={`optionBtn ${item.val === option && "btnactive"}`} onClick={()=> setOption(item.val)}> 
                         <h2> {item.title} </h2>
                     </button>
                 ))}
@@ -276,14 +251,14 @@ function Food() {
 
             <div className='foodBody'>
                 {food.map((item,key)=>(
-                    item.type == option &&
-                    <div onClick={()=> setModal(true) & setModalBody(item)} key={key} className='foodItem'>
-                        <div className='foodImage'>
-                            {/* <img src={`${ServerLink}/${item.image}`} /> */}
-                            <img src={`${item.image}`} />
+                    ((item.type).toLowerCase() == option || option == "all") &&
+                        <div onClick={()=> setModal(true) & setModalBody(item)} key={key} className='foodItem'>
+                            <div className='foodImage'>
+                                {/* <img src={`${ServerLink}/${item.image}`} /> */}
+                                <img src={`${item.image}`} />
+                            </div>
+                            <h1> {item.name} </h1>
                         </div>
-                        <h1> {item.name} </h1>
-                    </div>
                 ))}
             </div>
 
@@ -317,16 +292,16 @@ function Food() {
                                         <h1> {item.value} </h1>
                                     </div>
                                 ))}
-                                <button className='buttons' style={{width: "100%"}}>
-                                    <div className='btn'>
-                                        {GeneralBtn("Update", null, "update")}
-                                    </div>
-                                    <div className='btn'>
-                                        {GeneralBtn("Delete", null, "delete")}
-                                    </div>
-                                </button>
                             </div>
                         </div>
+                        <button className='buttons' style={{width: "100%"}}>
+                            <div className='btn'>
+                                {GeneralBtn(props.buttons.update, null, "update")}
+                            </div>
+                            <div className='btn'>
+                                {GeneralBtn(props.buttons.delete, null, "delete")}
+                            </div>
+                        </button>
                     </div>
                 </div>
             }

@@ -8,7 +8,7 @@ function Header(props) {
     <div className='header' style={{marginBottom: "20px"}}>
         <h1 style={{fontSize: "40px", fontWeight: 'bold'}}> 
           {props.title} 
-          {props.number && <span> ( {props.number} ) </span> }
+          {(props.number == 0 || props.number) && <span> ( {props.number} ) </span> }
         </h1>
         
         {props.button && 

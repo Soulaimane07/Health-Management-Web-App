@@ -4,8 +4,9 @@ import {BsFillCheckCircleFill} from 'react-icons/bs'
 import Step1 from './Steps/Step1';
 import Step2 from './Steps/Step2';
 
-function CreateUser() {
-    document.title = "Health Manager - Create User"
+function CreateUser(props) {
+    const lang = props.lang
+    document.title = `Health Manager - ${lang.title}`
 
 
     const [part, setPart] = useState(0)
@@ -13,17 +14,17 @@ function CreateUser() {
 
   return (
     <div className='Create PageBox'>
-        <Header title="Create User" />
+        <Header title={lang.title} />
         <hr className='hr'></hr> 
 
         <div className='list'>
-            <div className={`listItem ${part === 0 && "active"}`}> Step 1 <span> {part === 1 && <BsFillCheckCircleFill />} </span></div>
-            <div className={`listItem ${part === 1 && "active"}`}> Step 2 </div>
+            <div className={`listItem ${part === 0 && "active"}`}> {lang.step1} <span> {part === 1 && <BsFillCheckCircleFill />} </span></div>
+            <div className={`listItem ${part === 1 && "active"}`}> {lang.step2} </div>
         </div>
             
         <div className='CreateBody'>
             {part === 0 
-                ?   <Step1 setPart={setPart} setUserId={setUserId} />
+                ?   <Step1 lang={lang} setPart={setPart} setUserId={setUserId} />
                 :   <Step2 userId={userId} />
             }
         </div>

@@ -1,0 +1,12 @@
+.alert {
+    color: var(--danger);
+    padding: 10px 0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    align-items: center;
+}
+.alert span {
+    margin-right: 10px;
+}

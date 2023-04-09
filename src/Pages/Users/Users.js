@@ -3,27 +3,21 @@ import './Users.css'
 import Table from '../../Components/Table/Table'
 import { GetData } from '../../Components/Functions/CRUD'
 
-function Users() {
-    document.title = "Health Manager - Users"
-
+function Users(props) {
+    const lang = props.lang
+    document.title = `Health Manager - ${lang.title}`
 
     let users = GetData("/users")
     console.log("==> ", users);
 
-    let userKeys = ['id', 'email', 'first name', 'last name', 'password']
+    let userKeys = ['ID', lang.create.email, lang.create.fname, lang.create.lname, lang.create.pass]
 
   return (
     <div className='Users PageBox'>
-      <Header title="Users" button="Create User" number={users?.length} />
+      <Header title={lang.title} button={lang.create.title} number={users?.length} />
 
       <div className='PageBody'>
         <Table header={userKeys} data={users} />
-
-        <div className='video'>
-          {users.length === 0 && 
-            <video src='./assets/videos/notFound.mp4' style={{width: "100%", height: "100%", backgroundColor: "none"}} controls={false} muted autoPlay />
-          }
-        </div>
       </div>
     </div>
   )

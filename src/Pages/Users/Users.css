@@ -26,10 +26,7 @@
 .row h1 {
     font-weight: bold;
 }
-.video {
-    width: 50%;
-    margin: 0 auto;
-}
+
 
 
 
@@ -89,7 +86,7 @@
     background-color: var(--green);
     color: white;
 }
-.line select {
+.line select, .linee select {
     border-bottom: 2px solid var(--green);
     padding: 10px 10px;
     outline: none;

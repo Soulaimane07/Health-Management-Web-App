@@ -1,12 +1,17 @@
 import React, { useState } from 'react'
 import Header from '../../../Components/Header/Header'
-import { CreateBtn } from '../../../Components/Buttons/Buttons'
+import { ConditionBtn } from '../../../Components/Buttons/Buttons'
 import { useNavigate } from 'react-router-dom'
 
-function Createfood() {
-    document.title = "Health Manager - Create Food"
+function Createfood(props) {
+    const lang = props.lang
+    const lang2 = props.lang2
+
+    document.title = `Health Manager - ${lang2.title}`
+
 
     const [name, setname] = useState(null)
+    const [type, setType] = useState(null)
     const [calories, setcalories] = useState(null)
     const [carbs, setcarbs] = useState(null)
     const [fat, setfat] = useState(null)
@@ -17,6 +22,7 @@ function Createfood() {
     const Food ={
             image : image,
             name: name,
+            type: type,
             calories : calories,
             carbs : carbs,
             fat : fat,
@@ -25,7 +31,7 @@ function Createfood() {
     }
     
     console.log(Food)
-    const condittion = image !== null && name !== null && calories !== null && carbs !== null && fat !== null && proteine !== null && fibre !== null 
+    const condittion = image !== null && name !== null && type !== null && calories !== null && carbs !== null && fat !== null && proteine !== null && fibre !== null 
     
     const navigate = useNavigate()
     const fun = () => {
@@ -34,51 +40,82 @@ function Createfood() {
 
     console.log(condittion);
 
+    const [logourl, setLogoUrl] = useState()
+    
+    const selectImage = (e, variable, urlimg) => {
+        variable(e.target.files[0])
+        urlimg(URL.createObjectURL(e.target.files[0]))
+    }
+
+    const Types = props.options
+
   return (
     <div className='Create PageBox'>
-        <Header title="Create Food"  />
+        <Header title={lang2.title}  />
         <hr className='hr'></hr> 
         
         <div className='CreateBody CreateFoodBody'>
             <div className='Content'>
                 <div>
-                    <div className='line file'>
-                        <label>Image</label>
-                        <input type='file' name='imgae' onChange={e=> setimage(e.target.files[0])} />
+                    <div className="image-input flex items-center justify-center w-full">
+                        {logourl ?  
+                            <div className='logo'>
+                            <img src={logourl} /> 
+                            </div>
+                        :
+                            <label className="image flex flex-col items-center justify-center w-full h-64 border-2 border-dashed rounded-lg cursor-pointer">
+                                <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                                    <svg aria-hidden="true" className="w-10 h-10 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                                    <p className="mb-2 text-sm"> {lang2.image1} <span className="font-semibold"> {lang2.image2} </span></p>
+                                    <p className="text-sm"></p>
+                                </div>
+                                <input 
+                                id="dropzone-file" 
+                                type="file" 
+                                className="hidden" 
+                                accept="image/*" 
+                                onChange={(e) => selectImage(e, setimage, setLogoUrl)}
+                                />
+                            </label>
+                        }
                     </div>
                     <div className='line'>
-                        <label>Name</label>
+                        <label> {lang.name} </label>
                         <input type='text' name='name' onChange={e=> setname(e.target.value)} />
                     </div>
                     <div className='line'>
-                        <label>Type</label>
-                        <input type='text' name='calories' onChange={e=> setcalories(e.target.value)} />
+                        <label> {lang.type} </label>
+                        <select onChange={e => setType(e.target.value)}>
+                            {Types.map((item,key)=>(
+                                <option key={key} value={item.val}> {item.title} </option>
+                            ))}
+                        </select>
                     </div>
                 </div>
-                {CreateBtn("Ajouter", condittion, fun)}
+                {ConditionBtn(props.create, condittion, fun)}
             </div>
             
             <div className='black'></div>
             
             <div className='Content'>
                 <div className='line'>
-                    <label>Calories</label>
+                    <label> {lang.calories} </label>
                     <input type='number' name='calories' onChange={e=> setcalories(e.target.value)} />
                 </div>
                 <div className='line'>
-                    <label>Carbs</label>
+                    <label> {lang.carbs} </label>
                     <input type='number' name='carbs' onChange={e=> setcarbs(e.target.value)} />
                 </div>
                 <div className='line'>
-                    <label>Fat</label>
+                    <label> {lang.fat} </label>
                     <input type='number' name='fat' onChange={e=> setfat(e.target.value)}/>
                 </div>
                 <div className='line'>
-                    <label>Proteine</label>
+                    <label> {lang.protein} </label>
                     <input type='number' name='proteine' onChange={e=> setproteine(e.target.value)}/>
                 </div>
                 <div className='line'>
-                    <label>Fibre</label>
+                    <label> {lang.fiber} </label>
                     <input type='number' name='fibre' onChange={e=> setfibre(e.target.value)} />
                 </div>
             </div>

@@ -1,11 +1,11 @@
 import { TailSpin } from "react-loader-spinner"
 
-export const CreateBtn = (text, condittion, fun) => {
+export const ConditionBtn = (text, condittion, fun) => {
     return (
         <button
             disabled={!condittion}
             className={`CreateBtn ${condittion && "activeBtn"}`}
-            onClick={()=> fun}
+            onClick={()=> fun()}
         > 
             {text}
         </button>

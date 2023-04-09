@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { AlertDanger } from '../../../../Components/Alerts/Alerts'
-import { CreateBtn } from '../../../../Components/Buttons/Buttons'
+import { ConditionBtn } from '../../../../Components/Buttons/Buttons'
 
 function Step1(props) {
+    const lang = props.lang
+
     const [email, setEmail] = useState(null)
     const [fname, setFname] = useState(null)
     const [lname, setLname] = useState(null)
@@ -26,24 +28,24 @@ function Step1(props) {
     <>
         <form>
             <div className='line'>
-                <label> Email </label>
+                <label> {lang.email} </label>
                 <input type='email' onChange={(e)=> setEmail(e.target.value)} />
             </div>
             <div className='line'>
-                <label> First Name </label>
+                <label> {lang.fname} </label>
                 <input type='text' onChange={(e)=> setFname(e.target.value)} />
             </div>
             <div className='line'>
-                <label> Last name </label>
+                <label> {lang.lname} </label>
                 <input type='text' onChange={(e)=> setLname(e.target.value)} />
             </div>
             <div className='line'>
-                <label> Password </label>
+                <label> {lang.pass} </label>
                 <input type='password' onChange={(e)=> setPass(e.target.value)} />
                 {pass?.length < 8 && AlertDanger("Password must be more than 8 digits")}
             </div>
         </form>
-        {CreateBtn("Next", condittion, create)}
+        {ConditionBtn(lang.next, condittion, create)}
     </>
   )
 }

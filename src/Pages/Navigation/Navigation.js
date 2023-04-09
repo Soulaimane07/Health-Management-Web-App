@@ -6,29 +6,31 @@ import { AiOutlineHome} from 'react-icons/ai';
 import { FiUsers } from 'react-icons/fi';
 
 function Navigation(props) {
+  const lang = props.lang
+
   const list= [
     {
-      "title":"Dashboard",
+      "title": lang.dashboard,
       "logo": <RxDashboard />,
       "link":"/",
     },
     {
-      "title":"Food",
+      "title": lang.food,
       "logo": <AiOutlineHome />,
       "link":"/food",
     },
     {
-      "title":"Workout",
+      "title": lang.workouts,
       "logo": <AiOutlineHome />,
       "link":"/Workout",
     },
     {
-      "title":"Diets",
+      "title": lang.diets,
       "logo": <AiOutlineHome />,
       "link":"/diets",
     },
     {
-      "title":"Users",
+      "title": lang.users,
       "logo": <FiUsers />,
       "link":"/users",
     }    
