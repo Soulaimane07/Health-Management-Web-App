@@ -56,6 +56,12 @@
                 "create":"Create",
                 "delete":"Delete",
                 "update":"Update"
+            },
+            "login":{
+                "title":"Log in your account",
+                "email":"Email Adress",
+                "pass":"Password",
+                "login":"Login"
             }
         }
     },
@@ -116,6 +122,12 @@
                 "create":"Créer",
                 "delete":"Supprimer",
                 "update":"Mise à jour"
+            },
+            "login":{
+                "title":"Connectez-vous à votre compte",
+                "email":"E-mail",
+                "pass":"Mot de passe",
+                "login":"Connexion"
             }
         }
     },
@@ -176,6 +188,12 @@
                 "create":"إنشاء",
                 "delete":"حذف",
                 "update":"تحديث"
+            },
+            "login":{
+                "title":"تسجيل الدخول إلى حسابك",
+                "email":"البريد الإلكتروني",
+                "pass":"كلمة السر",
+                "login":"تسجيل الدخول"
             }
         }
     }

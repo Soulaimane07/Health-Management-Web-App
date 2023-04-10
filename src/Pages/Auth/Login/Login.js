@@ -7,8 +7,10 @@ import { ServerLink } from '../../../Components/Functions/CRUD'
 import { AlertDanger } from '../../../Components/Alerts/Alerts'
 import { useNavigate } from "react-router-dom";
 
-function Login() {
-    document.title = "Health Manager - Login"
+function Login(props) {
+    const lang = props.lang
+
+    document.title = `Health Manager - ${lang.login}`
 
     const navigate = useNavigate()
 
@@ -52,21 +54,21 @@ function Login() {
                 <div className='logo'>
                     <img src='./Assets/Images/Logo.jpg' alt='HM-Logo' />
                 </div>
-                <h1>Log in your account</h1>
+                <h1> {lang.title} </h1>
             </div>
 
             {message !== "" && AlertDanger(message, true)}
 
             <div style={{marginBottom: 30}}>
                 <div className='emailpass'>
-                    <input type='email' name='email' placeholder='Email Adress' onChange={e=> setEmail(e.target.value)}/>
+                    <input type='email' name='email' placeholder={lang.email} onChange={e=> setEmail(e.target.value)}/>
                 </div>
                 <div className='emailpass'>
-                    <input type='password' name='password' placeholder='Password' onChange={e=> setPass(e.target.value)} />
+                    <input type='password' name='password' placeholder={lang.pass} onChange={e=> setPass(e.target.value)} />
                 </div>
             </div>
             
-            {LoginButton("Login", condition, Loginfun, loading)}
+            {LoginButton(lang.login, condition, Loginfun, loading)}
         </div>
         <Auth />
     </div>

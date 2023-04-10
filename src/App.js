@@ -1,20 +1,11 @@
 import './App.css';
-import {BrowserRouter, Routes, Route } from "react-router-dom" 
-
-import Home from './Pages/Home/Home';
-import Navigation from './Pages/Navigation/Navigation';
-import Users from './Pages/Users/Users';
-import UserDetails from './Pages/Users/Pages/UserDetails';
-import Food from './Pages/Food/Food';
-import CreateUser from './Pages/Users/Pages/CreateUser';
-import Login from './Pages/Auth/Login/Login'
 import { useEffect, useState } from 'react';
-import Account from './Pages/Account/Account';
-import Createfood from './Pages/Food/Pages/Createfood';
-import Workout from './Pages/Workout/Workout';
-import Diets from './Pages/Diets.js/Diets';
+import {BrowserRouter} from "react-router-dom" 
+
+import Login from './Pages/Auth/Login/Login'
 
 import Language from "./language/Language.json"
+import LoggedIn from './Routes/LoggedIn';
 
 function App() {
   const [logged, setLogged] = useState(false)
@@ -30,7 +21,6 @@ function App() {
     setAccount(JSON.parse(account2))
   }, [])
   
-  console.log("==>>", account)
   console.log("==> Logged: ",logged, " : ", user?.fname);
 
   let lang = Language.French.pages
@@ -80,32 +70,9 @@ function App() {
   return (
     <BrowserRouter>
         {logged ?
-          <div className="Page">
-            <Routes>
-              <Route path='/' element={<Home lang={lang.navbar} />} />
-              <Route path='/users'>
-                <Route path='' element={<Users lang={lang.users} />} />
-                <Route path='create' element={<CreateUser lang={lang.users.create} />} />
-                <Route path={`:_id`} element={<UserDetails />} />
-              </Route>
-              <Route path="/account" element={<Account user={user} account={account} />} />
-              <Route path='/food' >
-                <Route path="" element={<Food lang={lang.food} options={options} buttons={lang.buttons} />} />
-                <Route path="create" element={<Createfood lang={lang.food.modal} lang2={lang.food.create} options={options} create={lang.buttons.create} />} />
-              </Route>
-              <Route path='/workout'>
-                <Route path='' element={<Workout />} />
-              </Route>
-              <Route path='/diets'>
-                <Route path='' element={<Diets />} />
-              </Route>
-            </Routes>
-            <Navigation user={user} lang={lang.navbar} />
-          </div>
+          <LoggedIn lang={lang} user={user} account={account} options={options} />
         :
-          <Routes>
-            <Route path='/login' element={<Login />}/>
-          </Routes>
+          <Login lang={lang.login} />
         }
     </BrowserRouter>
   );
