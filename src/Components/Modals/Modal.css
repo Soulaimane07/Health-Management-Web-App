@@ -23,6 +23,20 @@
     font-weight: bold;
 }
 
+
+
+.modal .line {
+    text-align: left;
+}
+.UpdateModal .modalBody {
+    height: 90vh;
+    overflow-y: scroll;
+}
+.modal .line.image {
+    width: 100px;
+    margin: 0 auto;
+}
+
 @media only screen and (max-width: 1000px) {
     .modal .modalBody {
         width: 40%;

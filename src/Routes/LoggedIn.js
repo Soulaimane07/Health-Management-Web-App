@@ -21,7 +21,7 @@ function LoggedIn(props) {
   return (
     <div className="Page">
         <Routes>
-            <Route path='/' element={<Home lang={lang.navbar} />} />
+            <Route path='/' element={<Home lang={lang.navbar} ChartOptions={props.ChartOptions} />} />
             <Route path='/users'>
                 <Route path='' element={<Users lang={lang.users} />} />
                 <Route path='create' element={<CreateUser lang={lang.users.create} />} />

@@ -42,15 +42,15 @@
     background-color: var(--green);
     margin-bottom: 50px;
 }
-.CreateBody .line {
+.line {
     display: grid;
     margin-bottom: 30px;
 }
-.CreateBody .line label {
+.line label {
     font-size: 18px;
     font-weight: bold;
 }
-.CreateBody .line input {
+.line input {
     margin-top: 4px;
     border: 2px solid var(--green);
     border-radius: 8px;

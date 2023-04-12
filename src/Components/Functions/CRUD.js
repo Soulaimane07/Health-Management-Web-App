@@ -19,7 +19,7 @@ export const GetData = (link) => {
     return users
 }
 
-export const Delete = (id) => {
+export const DeleteUser = (id) => {
   axios.delete(`${ServerLink}/users/${id}`)
       .then(res => {
         console.log("==> Succeded: ", res);
@@ -31,6 +31,17 @@ export const Delete = (id) => {
         .catch(error => {
           console.log("## Error: ", error);
         })
+      })
+      .catch(error => {
+        console.log("## Error: ", error);
+      })
+}
+
+export const Delete = (link, id, fun) => {
+  axios.delete(`${ServerLink}${link}${id}`)
+      .then(res => {
+        console.log("==> Succeded: ", res);
+        fun()
       })
       .catch(error => {
         console.log("## Error: ", error);

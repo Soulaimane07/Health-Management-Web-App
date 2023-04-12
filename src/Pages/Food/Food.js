@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import Header from '../../Components/Header/Header'
 import './Food.css'
-import { GetData, ServerLink } from '../../Components/Functions/CRUD'
+import { Delete, GetData, ServerLink } from '../../Components/Functions/CRUD'
 import {MdClose} from 'react-icons/md'
 import { GeneralBtn } from '../../Components/Buttons/Buttons'
+import Modal from '../../Components/Modals/Modal'
+import Update from '../../Components/Modals/Update'
 
 function Food(props) {
     const lang = props.lang
@@ -236,6 +238,26 @@ function Food(props) {
     //     },
     // ]
 
+    const [DeleteModal, setDeleteModal] = useState(false)
+    const OpenModal = () => {
+        setDeleteModal(true)
+    }
+    const CancelModal = () => {
+        setDeleteModal(false)
+    }
+    const fun = () => {
+        window.location.reload()
+    }
+    const DeleteFun = () => {
+        Delete("/food/", modalBody._id, fun)
+    }
+
+    const [updateModal, setUpdateModal] = useState(false)
+    const UpdateModal = () => {
+        setModal(false)
+        setUpdateModal(true)
+    }
+
   return (
     <div className='Food PageBox'>
         <Header title={lang.title} number={food?.length} button={lang.create.title} />
@@ -263,6 +285,7 @@ function Food(props) {
             </div>
 
             {modal &&
+            <>
                 <div className='modal'>
                     <button className='close' onClick={()=> setModal(false)}> <MdClose /> </button>
                     <div className='foodModal'>
@@ -272,8 +295,8 @@ function Food(props) {
                         <div className='foodModalBody'>
                             <div className='Content'>
                                 <div className='modalImage'>
-                                    {/* <img src={`${ServerLink}/${modalBody.image}`} /> */}
-                                    <img src={`${modalBody.image}`} />
+                                    <img src={`${ServerLink}/${modalBody.image}`} />
+                                    {/* <img src={`${modalBody.image}`} /> */}
                                 </div>
                                 {foodModalBody?.map((item,key)=>(
                                     <div key={key} className='foodModalRow' style={{marginBottom: 10}}>
@@ -296,15 +319,18 @@ function Food(props) {
                         </div>
                         <button className='buttons' style={{width: "100%"}}>
                             <div className='btn'>
-                                {GeneralBtn(props.buttons.update, null, "update")}
+                                {GeneralBtn(props.buttons.update, UpdateModal, "update")}
                             </div>
                             <div className='btn'>
-                                {GeneralBtn(props.buttons.delete, null, "delete")}
+                                {GeneralBtn(props.buttons.delete, OpenModal, "delete")}
                             </div>
                         </button>
                     </div>
                 </div>
+                {DeleteModal && <Modal Confirm={DeleteFun} Cancel={CancelModal} />}
+            </>
             }
+            {updateModal && <Update lang={lang.modal} modalBody={modalBody} />}
         </div>
     </div>
   )

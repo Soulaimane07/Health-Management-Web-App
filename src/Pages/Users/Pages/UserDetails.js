@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { GeneralBtn } from '../../../Components/Buttons/Buttons';
 import '../../../Components/Buttons/Button.css'
 import Modal from '../../../Components/Modals/Modal';
-import { Delete } from '../../../Components/Functions/CRUD';
+import { DeleteUser } from '../../../Components/Functions/CRUD';
 
 function UserDetails() {
     
@@ -99,7 +99,7 @@ function UserDetails() {
     const navigate = useNavigate()
     
     const Confirm = () => {
-        Delete(id)
+        DeleteUser(id)
         navigate('/users')
 
     }
@@ -135,7 +135,7 @@ function UserDetails() {
                 {GeneralBtn("Update", null, "update")}
             </div>
             <div className='btn'>
-                {GeneralBtn("Delete", Logout, "delete")}
+                {GeneralBtn("DeleteUser", Logout, "DeleteUser")}
             </div>
         </div>
 

@@ -68,10 +68,21 @@ function App() {
     },
   ]
 
+  const ChartOptions = [
+    lang?.food.options.fruits,
+    lang?.food.options.vegetables,
+    lang?.food.options.meat,
+    lang?.food.options.bakery,
+    lang?.food.options.dairy,
+    lang?.food.options.snacks,
+    lang?.food.options.drinks,
+    lang?.food.options.dishes,
+  ]
+
   return (
     <BrowserRouter>
         {logged ?
-          <LoggedIn lang={lang} user={user} account={account} options={options} />
+          <LoggedIn lang={lang} user={user} account={account} options={options} ChartOptions={ChartOptions} />
         :
           <Login lang={lang.login} />
         }
