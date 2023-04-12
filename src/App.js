@@ -14,7 +14,7 @@ function App() {
   const [account, setAccount] = useState(null)
 
   useEffect(()=>{
-    let user1 = localStorage.getItem('user')
+    let user1 = localStorage.getItem('HM-user')
     setUser(JSON.parse(user1))
     user1 !== null ? setLogged(true) : (setLogged(false))
 

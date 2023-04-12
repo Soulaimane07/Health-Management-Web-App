@@ -32,7 +32,7 @@ function Login(props) {
                     ? (
                         setLoading(false),
                         console.log(res.data),
-                        localStorage.setItem('user', JSON.stringify(res.data)),
+                        localStorage.setItem('HM-user', JSON.stringify(res.data)),
                         navigate('/'),
                         window.location.reload()
                     ) : (

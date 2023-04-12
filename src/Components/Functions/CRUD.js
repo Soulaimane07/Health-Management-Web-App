@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export const ServerLink = "https://health-manager.onrender.com"
+export const ServerLink = "https://health-management.up.railway.app"
 
 export const GetData = (link) => {
     const [users, setUsers] = useState([])
@@ -14,7 +14,7 @@ export const GetData = (link) => {
         .catch(err => {
           console.log("##> ",err.message);
         })
-    })
+    }, [])
 
     return users
 }
@@ -38,13 +38,12 @@ export const Delete = (id) => {
 }
 
 export const Post = (path, data, navigateLink) => {
-
   axios.post(`${ServerLink}${path}`, data, {headers: {'Content-Type':'multipart/form-data' }})
     .then(res=> {
       console.log("==> Succeded: ",res.data)
       navigateLink('/food')
     })
     .catch(error => {
-      console.log("## Error: ", error);
+      console.log("## Error: ", error.response.data.error.message);
     })
 }
