@@ -37,6 +37,7 @@ function Home(props) {
     },
   ]
 
+
   return (
     <div className='Home PageBox'>
       <Header title={lang.dashboard} />

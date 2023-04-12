@@ -21,3 +21,21 @@
     font-size: 24px;
     font-weight: bold;
 }
+
+@media only screen and (max-width: 500px) {
+    .Home .boxes{
+        display: inline;
+    }
+    .Home .boxe{
+        flex: auto;
+        margin: 0 2%;
+        margin-bottom: 20px;
+        padding: 20px 30px;
+        width: 46%;
+        display: inline-block;
+    }
+    .Home .boxImage {
+        width: 40%;
+        margin: 0 auto;
+    }
+}

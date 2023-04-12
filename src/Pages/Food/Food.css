@@ -8,6 +8,7 @@
     color: white;
     transition: all 300ms;
     opacity: 80%;
+    margin-bottom: 10px;
 }
 .options .optionBtn:hover {
     background-color: var(--green);
@@ -18,6 +19,11 @@
     color: white;
     opacity: 100%;
 }
+
+
+
+
+
 
 
 .CreateFoodBody.CreateBody, .modal .foodModalBody {
@@ -39,7 +45,6 @@
 
 
 .foodBody {
-    margin-top: 40px;
     display: inline-flexbox;
     text-align: center;
 }
@@ -127,4 +132,84 @@
     width: 50%;
     margin: 0px auto;
     margin-bottom: 20px;
+}
+
+
+
+@media only screen and (max-width: 500px) {
+    .options {
+        display: flex;
+        align-items: center;
+        overflow-x: scroll;
+    }
+    .options::-webkit-scrollbar {
+        display: none;
+    }
+    .options .optionBtn {
+        margin-bottom: 0;
+    }
+
+
+
+
+    .CreateFoodBody {
+        padding-bottom: 50px;
+    }
+    .CreateFoodBody.CreateBody, .modal .foodModalBody {
+        display: inline-block;
+        margin: 0;
+        position: relative;
+    }
+    .CreateBody .Content, .modal .Content {
+        width: 100%;
+        padding: 0;
+    }
+
+    .CreateFoodBody .CreateBtn {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        margin: 0;
+        left: 0;
+    }
+
+
+
+
+
+    .foodBody {
+        margin: 0;
+        padding: 0;
+    }
+    .foodBody .foodItem {
+        display: inline-block;
+        width: 25%;
+    }
+    
+    
+    
+    .Food .modal .close {
+        top: 4%;
+        right: 4%;
+        color: var(--black);
+    }
+    .Food .foodModal {
+       width: 100vw;
+       border-radius: 0;
+       height: 100vh;
+    }
+    .Food .foodModal .modalImage {
+        width: 40%;
+        margin: 20px auto;
+    }
+    .Food .foodModal .foodModalRow {
+        margin: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .Food .modal .close {
+        top: 4%;
+        right: 4%;
+    }
 }

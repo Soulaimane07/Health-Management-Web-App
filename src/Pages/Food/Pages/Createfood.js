@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Header from '../../../Components/Header/Header'
 import { ConditionBtn } from '../../../Components/Buttons/Buttons'
 import { useNavigate } from 'react-router-dom'
+import { Post } from '../../../Components/Functions/CRUD'
 
 function Createfood(props) {
     const lang = props.lang
@@ -20,25 +21,25 @@ function Createfood(props) {
     const [image, setimage] = useState(null)
     
     const Food ={
-            image : image,
-            name: name,
-            type: type,
-            calories : calories,
-            carbs : carbs,
-            fat : fat,
-            protein: proteine,
-            fiber : fibre,
+        image : image,
+        name: name,
+        type: type,
+        calories : calories,
+        carbs : carbs,
+        fat : fat,
+        protein: proteine,
+        fiber : fibre,
     }
     
-    console.log(Food)
     const condittion = image !== null && name !== null && type !== null && calories !== null && carbs !== null && fat !== null && proteine !== null && fibre !== null 
     
     const navigate = useNavigate()
-    const fun = () => {
-        navigate('/food')
+    const nav = (link) => {
+        navigate(link)
     }
-
-    console.log(condittion);
+    const fun = () => {
+        Post("/food", Food, nav)
+    }
 
     const [logourl, setLogoUrl] = useState()
     

@@ -7,6 +7,9 @@
     top: 0;
     left: 0;
 }
+.Navigation .close {
+    display: none;
+}
 .logo {
     width: 60%;
     margin: 0 auto;
@@ -67,4 +70,78 @@ img {
 .profileLink .profileImg {
     width: 30%;
     margin-right: 10px;
+}
+
+
+
+.NavigationM {
+    position: fixed;
+    top: 35px;
+    right: 10px;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 30px;
+    display: flex;
+    background-color: white;
+    transition: all 300ms;
+}
+.NavigationM:hover {
+    background-color: var(--green);
+    color: white;
+}
+
+@media only screen and (max-width: 1000px) {
+    .Navigation {
+        width: 30%;
+        padding: 10px 20px;
+    }
+    .Navigation .close {
+        display: none;
+    }
+    .logo {
+        width: 60%;
+    }
+    .Navigation .pagesList {
+        width: 100%;
+    }
+    
+    .profileLink {
+        width: 85%;
+    }
+    .profileLink .profileImg {
+        width: 15%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .Navigation {
+        width: 100%;
+        padding: 10px 40px;
+    }
+    .Navigation .close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 20px;
+        display: inline;
+        font-size: 40px;
+        opacity: 60%;
+        transition: all 300ms;
+    }
+    .Navigation .close:hover {
+        opacity: 100%;
+    }
+    .logo {
+        width: 40%;
+    }
+    .Navigation .pagesList {
+        width: 100%;
+    }
+    
+    .profileLink {
+        width: 90%;
+    }
+    .profileLink .profileImg {
+        width: 15%;
+    }
 }

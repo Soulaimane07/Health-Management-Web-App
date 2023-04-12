@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { AlertDanger } from '../../../../Components/Alerts/Alerts'
 import { ConditionBtn } from '../../../../Components/Buttons/Buttons'
+import { Post } from '../../../../Components/Functions/CRUD'
 
 function Step1(props) {
     const lang = props.lang
@@ -17,9 +18,12 @@ function Step1(props) {
         pass: pass
     }
     
-    const create = (id) => {
+    const Part2 = (id) => {
         props.setPart(1)
         props.setUserId(id)
+    }
+    const create = (id) => {
+        Post('users', user, Part2(id))
     }
 
     const condittion = email !== null && fname !== null && lname !== null && pass?.length > 7

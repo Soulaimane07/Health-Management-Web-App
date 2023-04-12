@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Header from '../../Components/Header/Header'
 import './Food.css'
-import { GetData } from '../../Components/Functions/CRUD'
+import { GetData, ServerLink } from '../../Components/Functions/CRUD'
 import {MdClose} from 'react-icons/md'
 import { GeneralBtn } from '../../Components/Buttons/Buttons'
 
@@ -250,8 +250,8 @@ function Food(props) {
             </div>
 
             <div className='foodBody'>
-                {food.map((item,key)=>(
-                    ((item.type).toLowerCase() == option || option == "all") &&
+                {food?.map((item,key)=>(
+                    ((item.type)?.toLowerCase() == option || option == "all") &&
                         <div onClick={()=> setModal(true) & setModalBody(item)} key={key} className='foodItem'>
                             <div className='foodImage'>
                                 {/* <img src={`${ServerLink}/${item.image}`} /> */}

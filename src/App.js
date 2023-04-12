@@ -1,4 +1,5 @@
 import './App.css';
+import './Media.css';
 import { useEffect, useState } from 'react';
 import {BrowserRouter} from "react-router-dom" 
 
