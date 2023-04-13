@@ -6,14 +6,14 @@ import { FoodCalcules } from './Charts';
 function FoodChat(props) {
     ChartJS.register(ArcElement, Tooltip, Legend);
 
-  let fruits = FoodCalcules()?.fruits
-  let vegetables = FoodCalcules()?.vegetables
-  let meat = FoodCalcules()?.meat
-  let bakery = FoodCalcules()?.bakery
-  let dairy = FoodCalcules()?.dairy
-  let snacks = FoodCalcules()?.snacks
-  let drinks = FoodCalcules()?.drinks
-  let dishes = FoodCalcules()?.dishes
+  let fruits = FoodCalcules(props.data)?.fruits
+  let vegetables = FoodCalcules(props.data)?.vegetables
+  let meat = FoodCalcules(props.data)?.meat
+  let bakery = FoodCalcules(props.data)?.bakery
+  let dairy = FoodCalcules(props.data)?.dairy
+  let snacks = FoodCalcules(props.data)?.snacks
+  let drinks = FoodCalcules(props.data)?.drinks
+  let dishes = FoodCalcules(props.data)?.dishes
 
   let data = {
     labels: props.ChartOptions,
@@ -36,9 +36,7 @@ function FoodChat(props) {
   };
   return (
     <div>
-        <Pie
-          data={data}
-        />
+      <Pie data={data} />
     </div>
   )
 }

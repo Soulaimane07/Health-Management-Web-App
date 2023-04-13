@@ -49,13 +49,30 @@
                     "fname":"First name",
                     "lname":"Last name",
                     "pass":"Password",
-                    "next":"Next"
+                    "next":"Next",
+                    "lang":"Language",
+                    
+                    "age":"Age",
+                    "gendre":"Gendre",
+                    "goal":"Goal",
+                    "activity":"Activity",
+                    "Cweight":"Current weight",
+                    "Gweight":"Goal weight",
+                    "calories":"Calories",
+                    "steps":"Steps",
+                    "water":"Water",
+                    "finish":"Finish"
                 }
             },
             "buttons":{
                 "create":"Create",
                 "delete":"Delete",
                 "update":"Update"
+            },
+            "modal":{
+                "title":"Are you sure !",
+                "yes":"Yes",
+                "no":"No"
             },
             "login":{
                 "title":"Log in your account",
@@ -115,13 +132,32 @@
                     "fname":"Prenom",
                     "lname":"Nom",
                     "pass":"Mot de passe",
-                    "next":"suivant"
+                    "next":"suivant",
+                    "lang":"Language",
+                    
+                    "age":"Age",
+                    "gendre":"Sexe",
+                    "goal":"",
+                    "activity":"",
+                    "Cweight":"",
+                    "Gweight":"",
+                    "calories":"",
+                    "steps":"",
+                    "water":"",
+                    "finish":""
                 }
             },
             "buttons":{
                 "create":"Créer",
                 "delete":"Supprimer",
-                "update":"Mise à jour"
+                "update":"Mise à jour",
+                "yes":"Oui",
+                "no":"Non"
+            },
+            "modal":{
+                "title":"",
+                "yes":"Oui",
+                "no":"Non"
             },
             "login":{
                 "title":"Connectez-vous à votre compte",
@@ -181,13 +217,30 @@
                     "fname":"الاسم الأول",
                     "lname":"الاسم الأخير",
                     "pass":"كلمة السر",
-                    "next":"التالي"
+                    "next":"التالي",
+                    "lang":"",
+                    
+                    "age":"",
+                    "gendre":"",
+                    "goal":"",
+                    "activity":"",
+                    "Cweight":"",
+                    "Gweight":"",
+                    "calories":"",
+                    "steps":"",
+                    "water":"",
+                    "finish":""
                 }
             },
             "buttons":{
                 "create":"إنشاء",
                 "delete":"حذف",
                 "update":"تحديث"
+            },
+            "modal":{
+                "title":"",
+                "yes":"نعم",
+                "no":"لا"
             },
             "login":{
                 "title":"تسجيل الدخول إلى حسابك",

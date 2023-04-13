@@ -17,13 +17,16 @@ function Step1(props) {
         lname: lname,
         pass: pass
     }
+
+    console.log(user);
     
     const Part2 = (id) => {
         props.setPart(1)
         props.setUserId(id)
+        console.log(id);
     }
-    const create = (id) => {
-        Post('users', user, Part2(id))
+    const create = () => {
+        Post('/users', user, Part2)
     }
 
     const condittion = email !== null && fname !== null && lname !== null && pass?.length > 7

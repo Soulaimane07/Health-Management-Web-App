@@ -25,11 +25,11 @@ function LoggedIn(props) {
             <Route path='/users'>
                 <Route path='' element={<Users lang={lang.users} />} />
                 <Route path='create' element={<CreateUser lang={lang.users.create} />} />
-                <Route path={`:_id`} element={<UserDetails />} />
+                <Route path={`:_id`} element={<UserDetails lang={lang.users} buttons={lang.buttons} modal={lang.modal} />} />
             </Route>
-            <Route path="/account" element={<Account user={user} account={account} />} />
+            <Route path="/account" element={<Account user={user} account={account} lang={lang} />} />
             <Route path='/food' >
-                <Route path="" element={<Food lang={lang.food} options={options} buttons={lang.buttons} />} />
+                <Route path="" element={<Food lang={lang.food} options={options} buttons={lang.buttons} modal={lang.modal} />} />
                 <Route path="create" element={<Createfood lang={lang.food.modal} lang2={lang.food.create} options={options} create={lang.buttons.create} />} />
             </Route>
             <Route path='/workout'>

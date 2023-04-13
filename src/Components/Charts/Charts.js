@@ -1,8 +1,6 @@
 import { GetData } from "../Functions/CRUD"
 
-export const FoodCalcules = () => {
-    const food = GetData("/food")
-
+export const FoodCalcules = (data) => {
     let fruits = 0
     let vegetables = 0
     let meat = 0
@@ -12,7 +10,7 @@ export const FoodCalcules = () => {
     let drinks = 0
     let dishes = 0
 
-    food?.map(item=>(
+    data?.map(item=>(
         item.type === "fruits" && (fruits = fruits + 1),
         item.type === "vegetables" && (vegetables = vegetables + 1),
         item.type === "meat" && (meat = meat + 1),
@@ -22,9 +20,6 @@ export const FoodCalcules = () => {
         item.type === "drinks" && (drinks = drinks + 1),
         item.type === "dishes" && (dishes = dishes + 1)
     ))
-
-    // 100 food --> 100%
-    // 5 fruits --> x
 
     return {fruits, vegetables, meat, bakery, dairy, snacks, drinks, dishes}
 }

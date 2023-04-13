@@ -21,12 +21,9 @@ function Table(props) {
                         <tr key={key} className="tableLine bg-white border-b">
                             <th scope="row" className="px-6 py-4 font-medium whitespace-nowrap ">
                                 <Link to={`${user._id}`}>
-                                        {user._id}
+                                    {user.email}
                                 </Link>
                             </th>
-                            <td className="px-6 py-4">
-                                {user.email}
-                            </td>
                             <td className="px-6 py-4">
                                 {user.fname}
                             </td>

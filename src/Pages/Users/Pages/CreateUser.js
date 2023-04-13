@@ -25,7 +25,7 @@ function CreateUser(props) {
         <div className='CreateBody'>
             {part === 0 
                 ?   <Step1 lang={lang} setPart={setPart} setUserId={setUserId} />
-                :   <Step2 userId={userId} />
+                :   <Step2 lang={lang} userId={userId} />
             }
         </div>
     </div>

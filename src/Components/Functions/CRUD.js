@@ -48,13 +48,13 @@ export const Delete = (link, id, fun) => {
       })
 }
 
-export const Post = (path, data, navigateLink) => {
-  axios.post(`${ServerLink}${path}`, data, {headers: {'Content-Type':'multipart/form-data' }})
+export const Post = (path, data, fun) => {
+  axios.post(`${ServerLink}${path}`, data, path === "/food" && {headers: {'Content-Type':'multipart/form-data' }})
     .then(res=> {
       console.log("==> Succeded: ",res.data)
-      navigateLink('/food')
+      fun(res.data?.user?._id)
     })
     .catch(error => {
-      console.log("## Error: ", error.response.data.error.message);
+      console.log("## Error: ", error.response);
     })
 }

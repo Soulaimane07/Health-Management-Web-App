@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ConditionBtn } from '../../../../Components/Buttons/Buttons'
+import { Post } from '../../../../Components/Functions/CRUD'
 
 function Step2(props) {
+    const lang = props.lang
+
     const goals = [
         {
             "title":"",
@@ -63,16 +66,20 @@ function Step2(props) {
 
     const navigate = useNavigate()
 
-    const navigateFun = () => {
-        navigate('/users')
+    const AfterPost = () => {
+        navigate(`/users/${props.userId}`)
         window.location.reload()
+    }
+
+    const FinishFun = () => {
+        Post('/usersDetails', userDetails, AfterPost)
     }
 
   return (
     <>
         <form>
             <div className='line'>
-                <label> Goal </label>
+                <label> {lang.goal} </label>
                 <select onChange={(e)=> setGoal(e.target.value)}>
                     {goals.map((item,key)=>(
                         <option key={key} value={item.title}> {item.title} </option>
@@ -80,7 +87,7 @@ function Step2(props) {
                 </select>
             </div>
             <div className='line'>
-                <label> Sexe </label>
+                <label> {lang.gendre} </label>
                 <div style={{display: 'flex', alignItems: 'center'}}>
                     <input type='radio' name="sexe" value={"Female"} onChange={(e)=> setSex(e.target.value)} /> 
                     <h2 style={{ marginLeft: "10px" }}> Female </h2>
@@ -91,11 +98,11 @@ function Step2(props) {
                 </div>
             </div>
             <div className='line'>
-                <label> Age </label>
+                <label> {lang.age} </label>
                 <input type='number' onChange={(e)=> setAge(e.target.value)} />
             </div>
             <div className='line'>
-                <label> Height </label>
+                <label> {lang.height} </label>
                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
 
                     <input type='number' style={{width: "45%"}} onChange={(e)=> setHeightX(e.target.value)} />
@@ -103,15 +110,15 @@ function Step2(props) {
                 </div>
             </div>
             <div className='line'>
-                <label> Current Weight </label>
+                <label> {lang.Cweight} </label>
                 <input type='number' onChange={(e)=> setGweight(e.target.value)} />
             </div>
             <div className='line'>
-                <label> Goal Weight </label>
+                <label> {lang.Gweight} </label>
                 <input type='number' onChange={(e)=> setCweight(e.target.value)} />
             </div>
             <div className='line'>
-                <label> Activity </label>
+                <label> {lang.activity} </label>
                 <select onChange={(e)=> setActivity(e.target.value)}>
                     {activities.map((item,key)=>(
                         <option key={key}  value={item.title}> {item.title} </option>
@@ -119,7 +126,7 @@ function Step2(props) {
                 </select>
             </div>
         </form>
-        {ConditionBtn("Finish", "/usersDetails", userDetails, condittion2, navigateFun)}   
+        {ConditionBtn(lang.finish, condittion2, FinishFun)}   
     </>
   )
 }

@@ -66,4 +66,19 @@
         width: 40%;
         margin: 0 auto;
     }
+
+
+
+    .charts {
+        display: table;
+        margin: 0;
+        width: 100%;
+    }
+    .charts .chart1 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .charts .chart2 {
+        width: 100%;
+    }
 }

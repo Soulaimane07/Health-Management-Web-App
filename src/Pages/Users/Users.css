@@ -1,21 +1,26 @@
-.data {
-    width: 40%;
+.UserDetailsPage {
+    display: flex;
+    align-items: unsafe;
+    padding-right: 20px;
+}
+.userData {
+    width: 60%;
     margin: 0 20px;
     padding: 10px;
     background-color: white;
     border-radius: 16px;
     min-height: 100vh;
-    padding: 20px 30px;
+    padding: 20px 40px;
 }
-.data .profileImg {
-    width: 50%;
+.userData .profileImg {
+    width: 30%;
     margin: 0 auto;
 }
-.data .user {
-    font-size: 30px;
+.userData .user {
+    font-size: 26px;
     font-weight: bold;
     text-align: center;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 .row {
     display: flex;
@@ -27,6 +32,20 @@
     font-weight: bold;
 }
 
+
+.userCharts {
+    background-color: white;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 20px 40px;
+}
+.userCharts .userChart h1 {
+    font-size: 24px;
+    /* background-color: cadetblue; */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
 
 
 
@@ -102,5 +121,22 @@
     
     .list {
         width: 80%;
+    }
+
+
+
+    .UserDetailsPage {
+        display: table;
+        padding-right: 0px;
+        width: 100%;
+    }
+    .userData {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    .userCharts {
+        border-radius: 0px;
     }
 }

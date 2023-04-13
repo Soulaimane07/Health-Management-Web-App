@@ -10,7 +10,7 @@ function Users(props) {
     let users = GetData("/users")
     console.log("==> ", users);
 
-    let userKeys = ['ID', lang.create.email, lang.create.fname, lang.create.lname, lang.create.pass]
+    let userKeys = [lang.create.email, lang.create.fname, lang.create.lname, lang.create.pass]
 
   return (
     <div className='Users PageBox'>

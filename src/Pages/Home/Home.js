@@ -3,29 +3,19 @@ import Header from '../../Components/Header/Header'
 import { Link } from 'react-router-dom'
 import FoodChat from '../../Components/Charts/FoodChat'
 import { GetData } from '../../Components/Functions/CRUD'
-import { Bar, Line } from 'react-chartjs-2'
-
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';;
-
+import UsersChart from '../../Components/Charts/UsersChart'
 
 function Home(props) {
   const lang = props.lang
   document.title = `Health Manager - ${lang.dashboard}`
 
+  let food = GetData('/food')
+
   const Boxes=[
     {
       "title": lang.food,
       "icon":"../assets/images/home/food.png",
-      "number": GetData("/food").length,
+      "number": food?.length,
       "link":"/food"
     },
     {
@@ -50,34 +40,21 @@ function Home(props) {
     },
   ]
 
-
-
-  ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend
-  );
-
-
-
-  const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
-  const data = {
-    labels,
-    datasets: [
-      {
-        label: "Users",
-        data: [0, 50, 100, 100, 300, 250, 250],
-        borderColor: '#0bf186b1',
-        backgroundColor: '#0bf186b1',
-      },
-    ],
-  };
-
+  let userChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septembre', 'October', 'November', 'December']
+  let userChartData = [
+    {
+      label: "Created users",
+      data: [0, 10, 50, 80, 100, 100, 250, 250, 200, 200, 200, 210],
+      borderColor: '#0bf186b1',
+      backgroundColor: '#0bf186b1',
+    },
+    {
+      label: "Active users",
+      data: [0, 10, 40, 50, 90, 100, 220, 200, 180, 170, 200, 200],
+      borderColor: '#F45050',
+      backgroundColor: '#F45050',
+    },
+  ]
 
   return (
     <div className='Home PageBox'>
@@ -100,11 +77,11 @@ function Home(props) {
       <div className='charts'>
         <div className='chart chart1'>
           <h1> {lang.food} </h1>
-          <FoodChat lang={lang} ChartOptions={props.ChartOptions} />
+          <FoodChat lang={lang} ChartOptions={props.ChartOptions} data={food} />
         </div>
         <div className='chart chart2'>
           <h1> {lang.users} </h1>
-          <Line data={data} />
+          <UsersChart labels={userChartLabels} data={userChartData} lang={lang} />
         </div>
       </div>
     </div>

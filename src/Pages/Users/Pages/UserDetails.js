@@ -5,8 +5,11 @@ import { GeneralBtn } from '../../../Components/Buttons/Buttons';
 import '../../../Components/Buttons/Button.css'
 import Modal from '../../../Components/Modals/Modal';
 import { DeleteUser } from '../../../Components/Functions/CRUD';
+import UsersChart from '../../../Components/Charts/UsersChart';
 
-function UserDetails() {
+function UserDetails(props) {
+    const buttons = props.buttons
+    const lang = props.lang
     
     const [modal, setModal] = useState(false)
     
@@ -32,58 +35,58 @@ function UserDetails() {
     
     const data = [
         {
-            "title":"First name",
+            "title":lang?.create.fname,
             "value": user?.fname,
         },
         {
-            "title":"Last name",
+            "title":lang?.create.lname,
             "value": user?.lname,
         },
         {
-            "title":"Email",
+            "title":lang?.create.email,
             "value": user?.email,
         },
         {
-            "title":"password",
+            "title":lang?.create.pass,
             "value": user?.pass,
         },
     ]
 
     const detaildata = [
         {
-            "title":"Age",
+            "title":lang?.create.age,
             "value": userDetails?.age,
         },
         {
-            "title":"Gendre",
+            "title":lang?.create.gendre,
             "value": userDetails?.sex,
         },
         {
-            "title":"Goal",
+            "title":lang?.create.goal,
             "value": userDetails?.goal,
         },
         {
-            "title":"activity",
+            "title":lang?.create.activity,
             "value": userDetails?.activity,
         },
         {
-            "title":"Current Weight",
+            "title":lang?.create.Cweight,
             "value": userDetails?.CWeight,
         },
         {
-            "title":"Goal Weight",
+            "title":lang?.create.Gweight,
             "value": userDetails?.GWeight,
         },
         {
-            "title":"calories",
+            "title":lang?.create.calories,
             "value": userDetails?.calories,
         },
         {
-            "title":"Steps",
+            "title":lang?.create.steps,
             "value": userDetails?.steps,
         },
         {
-            "title":"water",
+            "title":lang?.create.water,
             "value": userDetails?.water,
         },
     ]
@@ -101,45 +104,81 @@ function UserDetails() {
     const Confirm = () => {
         DeleteUser(id)
         navigate('/users')
-
     }
 
+    let userChartLabels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Friday', 'Saturday', 'Sunday']
+    let userChartdatasets = [
+        {
+            label: "Activity",
+            data: [0, 50, 100, 100, 300, 250, 250, 200],
+            borderColor: '#0bf186b1',
+            backgroundColor: '#0bf186b1',
+        },
+        {
+            label: "Calories",
+            data: [0, 100, 10, 10, 300, 200, 250, 80],
+            borderColor: '#F9D949',
+            backgroundColor: '#F9D949',
+        },
+        {
+            label: "Steps",
+            data: [0, 150, 40, 130, 200, 20, 0, 50],
+            borderColor: '#F45050',
+            backgroundColor: '#F45050',
+        },
+        {
+            label: "Water",
+            data: [150, 40, 130, 200, 20, 0, 100, 400],
+            borderColor: '#569DAA',
+            backgroundColor: '#569DAA',
+        },
+    ]
+
   return (
-    <div className='data'>
-        <div className='profileImg'>
-            <img src='../assets/images/profiles/4.png' alt='Profile' />
-        </div>
-
-        <h1 className='user'> {user.fname} {user.lname} </h1>
-        
-        <div style={{marginBottom: 40, marginLeft: 30, marginRight: 30}}>
-            {data.map((item,key)=>(
-                <div key={key} className='row'>
-                    <h1> {item.title} </h1>
-                    <h2> {item.value}  </h2>
-                </div>
-            ))}
-        </div>
-
-        <div style={{marginBottom: 40, marginLeft: 30, marginRight: 30}}>
-            {detaildata.map((item,key)=>(
-                <div key={key} className='row'>
-                    <h1> {item.title} </h1>
-                    <h2> {item.value}  </h2>
-                </div>
-            ))} 
-        </div>
-        
-        <div className='buttons' style={{marginBottom: 20}}>
-            <div className='btn'>
-                {GeneralBtn("Update", null, "update")}
+    <div className='UserDetailsPage'>
+        <div className='userData'>
+            <div className='profileImg'>
+                <img src='../assets/images/profiles/4.png' alt='Profile' />
             </div>
-            <div className='btn'>
-                {GeneralBtn("DeleteUser", Logout, "DeleteUser")}
+
+            <h1 className='user'> {user.fname} {user.lname} </h1>
+            
+            <div style={{marginBottom: 30, marginLeft: 30, marginRight: 30}}>
+                {data.map((item,key)=>(
+                    <div key={key} className='row'>
+                        <h1> {item.title} </h1>
+                        <h2> {item.value}  </h2>
+                    </div>
+                ))}
+            </div>
+
+            <div style={{marginBottom: 30, marginLeft: 30, marginRight: 30}}>
+                {detaildata.map((item,key)=>(
+                    <div key={key} className='row'>
+                        <h1> {item.title} </h1>
+                        <h2> {item.value}  </h2>
+                    </div>
+                ))} 
+            </div>
+            
+            <div className='buttons'>
+                <div className='btn'>
+                    {GeneralBtn(buttons.update, null, "update")}
+                </div>
+                <div className='btn'>
+                    {GeneralBtn(buttons.delete, Logout, "delete")}
+                </div>
             </div>
         </div>
 
-        {modal && <Modal logout={Logout} Confirm={Confirm} Cancel={Cancel} />}
+        <div className='userCharts'>
+            <div className='userChart'>
+                <h1> {user?.fname} Activity </h1>
+                <UsersChart labels={userChartLabels} data={userChartdatasets} lang={lang} />
+            </div>
+        </div>
+
+        {modal && <Modal lang={props.modal} logout={Logout} Confirm={Confirm} Cancel={Cancel} />}
     </div>
 
   )

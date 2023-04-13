@@ -6,13 +6,13 @@ function Modal(props) {
   return (
     <div className='modal'>
         <div className='modalBody'>
-            <h1> Are you sure! </h1>
+            <h1> {props.lang.title} </h1>
             <div className='buttons'>
                 <div className='btn'>
-                    {GeneralBtn("Yes", props.Confirm, "delete")}
+                    {GeneralBtn(props.lang.yes, props.Confirm, "delete")}
                 </div>
                 <div className='btn'>
-                    {GeneralBtn("No", props.Cancel, "update")}
+                    {GeneralBtn(props.lang.no, props.Cancel, "update")}
                 </div>
             </div>
         </div>

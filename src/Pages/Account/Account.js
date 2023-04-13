@@ -7,6 +7,8 @@ import Modal from '../../Components/Modals/Modal';
 import Languages from '../../language/Language.json'
 
 function Account(props) {
+    const lang = props.lang 
+
     document.title = "Health Manager - Account"
 
     const [logOut, setlogOut] = useState(false)
@@ -17,20 +19,24 @@ function Account(props) {
 
     const user = [
         {
-            "title":"Email",
+            "title": lang.users.create.email,
             "val": props.user?.email
         },
         {
-            "title":"First name",
+            "title":lang.users.create.fname,
             "val": props.user?.fname
         },
         {
-            "title":"Last name",
+            "title":lang.users.create.lname,
             "val": props.user?.lname
         },
         {
-            "title":"Password",
+            "title":lang.users.create.pass,
             "val": props.user?.pass
+        },
+        {
+            "title":lang.users.create.lang,
+            "val": props.account
         },
     ]
 
@@ -77,23 +83,19 @@ function Account(props) {
                     <h2> {item.val} </h2>
                 </div>
             ))}
-            <div className='line'>
-                <h1> Language </h1>
-                <h2> {props.account} </h2>
-            </div>
 
             <div className='buttons'>
                 <div className='btn'>
-                    {GeneralBtn("Update", UpdateFun, "update")}
+                    {GeneralBtn(lang.buttons.update, UpdateFun, "update")}
                 </div>
                 <div className='btn'>
-                    {GeneralBtn("Log out", LogoutClick, "delete")}
+                    {GeneralBtn(lang.buttons.delete, LogoutClick, "delete")}
                 </div>
             </div>
         </div>
 
         {logOut &&
-            <Modal Cancel={cancelClick} Confirm={LogOut} />
+            <Modal lang={lang.modal} Cancel={cancelClick} Confirm={LogOut} />
         }
 
         {update &&
