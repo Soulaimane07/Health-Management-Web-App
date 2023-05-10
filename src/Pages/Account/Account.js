@@ -106,6 +106,7 @@ function Account(props) {
                         <div className='linee'>
                             <h2> Language </h2>
                             <select onChange={(e)=> setNewLang(e.target.value)}>
+                                <option value=""> Choose </option>
                                 <option value={Languages.English.sub}> {Languages.English.title} </option>
                                 <option value={Languages.French.sub}> {Languages.French.title} </option>
                                 <option value={Languages.Arabic.sub}> {Languages.Arabic.title} </option>

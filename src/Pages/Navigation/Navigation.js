@@ -3,6 +3,8 @@ import { Link, NavLink } from 'react-router-dom'
 
 import { RxDashboard } from 'react-icons/rx';
 import { AiOutlineHome} from 'react-icons/ai';
+import { MdOutlineFastfood, MdSportsGymnastics} from 'react-icons/md';
+import { TfiApple} from 'react-icons/tfi';
 import { FiUsers } from 'react-icons/fi';
 import { useState } from 'react';
 
@@ -21,18 +23,18 @@ function Navigation(props) {
     },
     {
       "title": lang.food,
-      "logo": <AiOutlineHome />,
+      "logo": <MdOutlineFastfood />,
       "link":"/food",
     },
     {
-      "title": lang.workouts,
-      "logo": <AiOutlineHome />,
-      "link":"/Workout",
+      "title": lang.diets,
+      "logo": <TfiApple />,
+      "link":"/diets",
     },
     {
-      "title": lang.diets,
-      "logo": <AiOutlineHome />,
-      "link":"/diets",
+      "title": lang.workouts,
+      "logo": <MdSportsGymnastics />,
+      "link":"/Workout",
     },
     {
       "title": lang.users,

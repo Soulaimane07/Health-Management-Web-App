@@ -39,6 +39,25 @@
                     "image2":"Food Image"
                 }
             },
+            "diets":{
+                "title":"Diets",
+                "modal":{
+                    "id":"ID",
+                    "title":"Title",
+                    "desc":"Description",
+                    "type":"Type",
+                    "carbs":"Carbs",
+                    "fat":"Fat",
+                    "fiber":"Fiber",
+                    "protein":"Protein",
+                    "duree":"Duration (Hours)"
+                },
+                "create":{
+                    "title":"Create Diet",
+                    "image1":"Click to upload",
+                    "image2":"Food Image"
+                }
+            },
             "users":{
                 "title":"Users",
                 "create":{
@@ -207,6 +226,23 @@
                     "image2":"صورة الغذاء"
                 }
             },
+            "diets":{
+                "title":"الحميات",
+                "modal":{
+                    "id":"ID",
+                    "title":"العنوان",
+                    "desc":"الوصف",
+                    "carbs":"الكربوهيدرات",
+                    "fat":"الدهون",
+                    "protein":"البروتينات",
+                    "duree":"المدة (ساعات)"
+                },
+                "create":{
+                    "title":"إنشاء نظام غذائي",
+                    "image1":"انقر للتحميل",
+                    "image2":"صورة الغذاء"
+                }
+            },
             "users":{
                 "title":"المستخدمين",
                 "create":{
@@ -238,7 +274,7 @@
                 "update":"تحديث"
             },
             "modal":{
-                "title":"",
+                "title":"هل أنت متأكد !",
                 "yes":"نعم",
                 "no":"لا"
             },

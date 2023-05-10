@@ -34,6 +34,7 @@ function FoodChat(props) {
       },
     ],
   };
+  
   return (
     <div>
       <Pie data={data} />

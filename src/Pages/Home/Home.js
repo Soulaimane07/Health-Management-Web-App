@@ -16,18 +16,20 @@ function Home(props) {
       "title": lang.food,
       "icon":"../assets/images/home/food.png",
       "number": food?.length,
+      "numberLabel": "Food",
       "link":"/food"
     },
     {
       "title":lang.workouts,
       "icon":"../assets/images/home/workout.png",
-      "number": 14,
+      "number": 0,
+      "numberLabel": "Workout",
       "link":"/workout"
     },
     {
       "title": lang.diets,
       "icon":"../assets/images/home/diet.png",
-      "number": 10,
+      "number": GetData('/diets')?.length,
       "numberLabel": "Diet",
       "link":"/diets"
     },

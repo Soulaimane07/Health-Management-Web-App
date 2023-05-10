@@ -11,6 +11,7 @@ import Food from '../Pages/Food/Food'
 import Createfood from '../Pages/Food/Pages/Createfood'
 import Workout from '../Pages/Workout/Workout'
 import Diets from '../Pages/Diets/Diets'
+import CreateDiet from '../Pages/Diets/CreateDiet'
 
 function LoggedIn(props) {
     const lang = props.lang
@@ -36,7 +37,8 @@ function LoggedIn(props) {
                 <Route path='' element={<Workout />} />
             </Route>
             <Route path='/diets'>
-                <Route path='' element={<Diets />} />
+                <Route path='' element={<Diets lang={lang.diets} buttons={lang.buttons} modal={lang.modal} />} />
+                <Route path='create'element={<CreateDiet lang={lang.diets.modal} lang2={lang.diets.create} create={lang.buttons.create} /> } />
             </Route>
         </Routes>
         <Navigation user={user} lang={lang.navbar} />

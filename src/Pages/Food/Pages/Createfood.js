@@ -34,8 +34,8 @@ function Createfood(props) {
     const condittion = image !== null && name !== null && type !== null && calories !== null && carbs !== null && fat !== null && proteine !== null && fibre !== null 
     
     const navigate = useNavigate()
-    const nav = (link) => {
-        navigate(link)
+    const nav = () => {
+        navigate("/diets")
     }
     const fun = () => {
         Post("/food", Food, nav)

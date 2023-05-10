@@ -85,14 +85,14 @@
 
 
 
-.Food .modal .close {
+.Food .modal .close, .diets .modal .close {
     position: absolute;
     top: 15%;
     right: 18%;
     font-size: 40px;
     color: white;
 }
-.Food .foodModal {
+.Food .foodModal, .diets .foodModal {
    background-color: white;
    min-width: 40%;
    border-radius: 8px;
@@ -101,12 +101,12 @@
 .modal .hr {
     margin: 0;
 }
-.Food .foodModal .modalImage {
+.Food .foodModal .modalImage, .diets .foodModal .modalImage   {
     width: 40%;
     margin: 0 auto;
     margin-bottom: 20px;
 }
-.Food .foodModal .foodModalRow {
+.Food .foodModal .foodModalRow, .siets .foodModal .foodModalRow  {
     display: flex;
     justify-content: space-between;
     align-items: center;

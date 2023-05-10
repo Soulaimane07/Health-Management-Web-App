@@ -11,6 +11,11 @@
     border-radius: 16px;
     min-height: 100vh;
     padding: 20px 40px;
+    position: fixed;
+    top: 0;
+    left: 16%;
+    height: 100%;
+    width: 32%;
 }
 .userData .profileImg {
     width: 30%;
@@ -39,12 +44,19 @@
     border-radius: 8px;
     overflow: hidden;
     padding: 20px 40px;
+    margin-left: 42%;
 }
 .userCharts .userChart h1 {
     font-size: 24px;
-    /* background-color: cadetblue; */
     margin-bottom: 20px;
     font-weight: bold;
+}
+.userChart {
+    margin-bottom: 100px;
+}
+.userChart div {
+    width: 80%;
+    margin: 0 auto;
 }
 
 
@@ -69,7 +81,7 @@
     font-size: 18px;
     font-weight: bold;
 }
-.line input {
+.line input, textarea {
     margin-top: 4px;
     border: 2px solid var(--green);
     border-radius: 8px;

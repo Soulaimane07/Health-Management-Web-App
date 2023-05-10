@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { GeneralBtn } from '../../../Components/Buttons/Buttons';
 import '../../../Components/Buttons/Button.css'
 import Modal from '../../../Components/Modals/Modal';
-import { DeleteUser } from '../../../Components/Functions/CRUD';
+import { DeleteUser, ServerLink } from '../../../Components/Functions/CRUD';
 import UsersChart from '../../../Components/Charts/UsersChart';
 
 function UserDetails(props) {
@@ -107,25 +107,31 @@ function UserDetails(props) {
     }
 
     let userChartLabels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Friday', 'Saturday', 'Sunday']
-    let userChartdatasets = [
+    const userChartActivity = [
         {
             label: "Activity",
-            data: [0, 50, 100, 100, 300, 250, 250, 200],
+            data: [0, 1, 10, 9, 5, 4, 6, 14],
             borderColor: '#0bf186b1',
             backgroundColor: '#0bf186b1',
         },
+    ]
+    const userChartCalories = [
         {
             label: "Calories",
-            data: [0, 100, 10, 10, 300, 200, 250, 80],
-            borderColor: '#F9D949',
-            backgroundColor: '#F9D949',
-        },
-        {
-            label: "Steps",
-            data: [0, 150, 40, 130, 200, 20, 0, 50],
+            data: [2100, 2000, 2050, 2200, 2100, 2150, 2300, 2200],
             borderColor: '#F45050',
             backgroundColor: '#F45050',
         },
+    ]
+    const userChartSteps = [
+        {
+            label: "Steps",
+            data: [9000, 7000, 8000, 10000, 10500, 10000, 9000, 10000],
+            borderColor: '#F9D949',
+            backgroundColor: '#F9D949',
+        },
+    ]
+    const userChartWater = [
         {
             label: "Water",
             data: [150, 40, 130, 200, 20, 0, 100, 400],
@@ -133,6 +139,18 @@ function UserDetails(props) {
             backgroundColor: '#569DAA',
         },
     ]
+
+
+
+    const [userProgress, setUserProgress] = useState()
+
+    useEffect(()=> {
+        axios.get(`${ServerLink}/usersProgress/getByUserId/${user?._id}`)
+            .then(res => {
+                console.log(res.data);
+            })
+    }, [])
+    
 
   return (
     <div className='UserDetailsPage'>
@@ -174,7 +192,19 @@ function UserDetails(props) {
         <div className='userCharts'>
             <div className='userChart'>
                 <h1> {user?.fname} Activity </h1>
-                <UsersChart labels={userChartLabels} data={userChartdatasets} lang={lang} />
+                <UsersChart labels={userChartLabels} data={userChartActivity} lang={lang} />
+            </div>
+            <div className='userChart'>
+                <h1> {user?.fname} Calories </h1>
+                <UsersChart labels={userChartLabels} data={userChartCalories} lang={lang} />
+            </div>
+            <div className='userChart'>
+                <h1> {user?.fname} Steps </h1>
+                <UsersChart labels={userChartLabels} data={userChartSteps} lang={lang} />
+            </div>
+            <div className='userChart'>
+                <h1> {user?.fname} Water </h1>
+                <UsersChart labels={userChartLabels} data={userChartWater} lang={lang} />
             </div>
         </div>
 

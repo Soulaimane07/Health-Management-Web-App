@@ -49,7 +49,7 @@ export const Delete = (link, id, fun) => {
 }
 
 export const Post = (path, data, fun) => {
-  axios.post(`${ServerLink}${path}`, data, path === "/food" && {headers: {'Content-Type':'multipart/form-data' }})
+  axios.post(`${ServerLink}${path}`, data, {headers: {'Content-Type':'multipart/form-data' }})
     .then(res=> {
       console.log("==> Succeded: ",res.data)
       fun(res.data?.user?._id)
