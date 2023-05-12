@@ -20,13 +20,6 @@ function Home(props) {
       "link":"/food"
     },
     {
-      "title":lang.workouts,
-      "icon":"../assets/images/home/workout.png",
-      "number": 0,
-      "numberLabel": "Workout",
-      "link":"/workout"
-    },
-    {
       "title": lang.diets,
       "icon":"../assets/images/home/diet.png",
       "number": GetData('/diets')?.length,

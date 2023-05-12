@@ -32,11 +32,6 @@ function Navigation(props) {
       "link":"/diets",
     },
     {
-      "title": lang.workouts,
-      "logo": <MdSportsGymnastics />,
-      "link":"/Workout",
-    },
-    {
       "title": lang.users,
       "logo": <FiUsers />,
       "link":"/users",
