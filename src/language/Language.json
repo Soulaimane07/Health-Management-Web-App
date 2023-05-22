@@ -141,6 +141,25 @@
                     "image2":"Nourriture Image"
                 }
             },
+            "diets":{
+                "title":"Régimes",
+                "modal":{
+                    "id":"ID",
+                    "title":"Titre",
+                    "desc":"Description",
+                    "type":"Type",
+                    "carbs":"Crabes",
+                    "fat":"Gras",
+                    "fiber":"Fibre",
+                    "protein":"Protéine",
+                    "duree":"Durée (Heures)"
+                },
+                "create":{
+                    "title":"Créer un régime",
+                    "image1":"Cliquez pour télécharger",
+                    "image2":"Nourriture Image"
+                }
+            },
             "users":{
                 "title":"Utilisateurs",
                 "create":{
@@ -169,12 +188,10 @@
             "buttons":{
                 "create":"Créer",
                 "delete":"Supprimer",
-                "update":"Mise à jour",
-                "yes":"Oui",
-                "no":"Non"
+                "update":"Mise à jour"
             },
             "modal":{
-                "title":"",
+                "title":"Es-tu sûr !",
                 "yes":"Oui",
                 "no":"Non"
             },
