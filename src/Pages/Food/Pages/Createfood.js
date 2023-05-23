@@ -35,7 +35,7 @@ function Createfood(props) {
     
     const navigate = useNavigate()
     const nav = () => {
-        navigate("/diets")
+        navigate("/food")
     }
     const fun = () => {
         Post("/food", Food, nav)

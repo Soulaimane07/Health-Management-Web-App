@@ -5,6 +5,7 @@ import { Delete, GetData, ServerLink } from '../../Components/Functions/CRUD'
 import {MdClose} from 'react-icons/md'
 import { GeneralBtn } from '../../Components/Buttons/Buttons'
 import Modal from '../../Components/Modals/Modal'
+import UpdateDiet from './UpdateDiet'
 
 function Diets(props) {
     const lang = props.lang
@@ -65,6 +66,12 @@ function Diets(props) {
     }
   
 
+    const [updateModal, setUpdateModal] = useState(false)
+    const UpdateModal = () => {
+        // setModal(false)
+        setUpdateModal(true)
+    }
+
   return (
     <div className='diets PageBox'>
         <Header title={lang?.title} number={diets?.length} button={lang.create.title} />
@@ -119,7 +126,7 @@ function Diets(props) {
                             </div>
                             <button className='buttons' style={{width: "100%"}}>
                                 <div className='btn'>
-                                    {GeneralBtn(props.buttons.update, null, "update")}
+                                    {GeneralBtn(props.buttons.update, UpdateModal, "update")}
                                 </div>
                                 <div className='btn'>
                                     {GeneralBtn(props.buttons.delete, OpenModal, "delete")}
@@ -128,6 +135,15 @@ function Diets(props) {
                         </div>
                     </div>
                     {DeleteModal && <Modal lang={props.modal} Confirm={DeleteFun} Cancel={CancelModal} />}
+                    {updateModal && 
+                        <UpdateDiet
+                            options={props.options}
+                            modalBody={modalBody} 
+                            setUpdateModal={setUpdateModal} 
+                            create={lang.create.title} 
+                            lang={lang.modal} 
+                        />
+                    }
                 </>
             }
         </div>

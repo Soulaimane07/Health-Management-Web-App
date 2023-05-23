@@ -5,7 +5,7 @@ import { Delete, GetData, ServerLink } from '../../Components/Functions/CRUD'
 import {MdClose} from 'react-icons/md'
 import { GeneralBtn } from '../../Components/Buttons/Buttons'
 import Modal from '../../Components/Modals/Modal'
-import Update from '../../Components/Modals/Update'
+import UpdateFood from './Pages/UpdateFood'
 
 function Food(props) {
     const lang = props.lang
@@ -77,7 +77,7 @@ function Food(props) {
 
     const [updateModal, setUpdateModal] = useState(false)
     const UpdateModal = () => {
-        setModal(false)
+        // setModal(false)
         setUpdateModal(true)
     }
 
@@ -148,10 +148,11 @@ function Food(props) {
                             </button>
                         </div>
                     </div>
+
                     {DeleteModal && <Modal lang={props.modal} Confirm={DeleteFun} Cancel={CancelModal} />}
+                    {updateModal && <UpdateFood options={props.options} modalBody={modalBody} setUpdateModal={setUpdateModal} create={lang.create.title} lang={lang.modal} />}
                 </>
             }
-            {updateModal && <Update lang={lang.modal} modalBody={modalBody} />}
         </div>
     </div>
   )

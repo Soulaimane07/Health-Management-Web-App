@@ -58,3 +58,14 @@ export const Post = (path, data, fun) => {
       console.log("## Error: ", error.response);
     })
 }
+
+export const Update = (path, id, data, fun) => {
+  axios.patch(`${ServerLink}${path}/${id}`, data, {headers: {'Content-Type':'multipart/form-data' }})
+    .then(res => {
+      console.log(res.data);
+      fun()
+    })
+    .catch(err => {
+      console.log("## Error: ", err);
+    })
+}
