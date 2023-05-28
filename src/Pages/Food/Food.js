@@ -150,7 +150,7 @@ function Food(props) {
                     </div>
 
                     {DeleteModal && <Modal lang={props.modal} Confirm={DeleteFun} Cancel={CancelModal} />}
-                    {updateModal && <UpdateFood options={props.options} modalBody={modalBody} setUpdateModal={setUpdateModal} create={lang.create.title} lang={lang.modal} />}
+                    {updateModal && <UpdateFood options={props.options} modalBody={modalBody} setUpdateModal={setUpdateModal} buttons={props.buttons} create={lang.create.title} lang={lang.modal} />}
                 </>
             }
         </div>

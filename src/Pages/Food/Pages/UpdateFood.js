@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Post, ServerLink, Update } from '../../../Components/Functions/CRUD'
+import { Update } from '../../../Components/Functions/CRUD'
 import { useNavigate } from 'react-router-dom'
 import { ConditionBtn } from '../../../Components/Buttons/Buttons'
 import {MdClose} from 'react-icons/md'
@@ -97,7 +97,7 @@ function UpdateFood(props) {
                             </select>
                         </div>
                     </div>
-                    {ConditionBtn(props.create, condittion, fun)}
+                    {ConditionBtn(props.buttons.update, condittion, fun)}
                 </div>
                 
                 <div className='black'></div>

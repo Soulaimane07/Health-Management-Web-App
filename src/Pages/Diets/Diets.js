@@ -137,6 +137,7 @@ function Diets(props) {
                     {DeleteModal && <Modal lang={props.modal} Confirm={DeleteFun} Cancel={CancelModal} />}
                     {updateModal && 
                         <UpdateDiet
+                            buttons={props.buttons}
                             options={props.options}
                             modalBody={modalBody} 
                             setUpdateModal={setUpdateModal} 

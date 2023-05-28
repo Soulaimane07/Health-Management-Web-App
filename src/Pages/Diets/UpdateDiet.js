@@ -85,7 +85,7 @@ function UpdateDiet(props) {
                                 <textarea value={desc} onChange={(e)=> setdesc(e.target.value)} id="message" rows="4" class="p-2.5 w-full text-sm" placeholder="Write your thoughts here..."></textarea>
                             </div>
                         </div>
-                        {ConditionBtn(props.create, condittion, fun)}
+                        {ConditionBtn(props.buttons.update, condittion, fun)}
                     </div>
 
                     <div className='black'></div>
